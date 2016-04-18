@@ -52,7 +52,7 @@
           </ul>
           <div class="searchBlock">
               <img src="img/search.png" alt="" class="searchBlock searchImg">
-              <form action="" class="searchBlock searchForm" method="post">
+              <form action="#" class="searchBlock searchForm" name="searchForm" method="post" enctype="multipart/form-data">
                   <input type="text" placeholder="Что ищём?">
               </form>
           </div>
@@ -61,12 +61,12 @@
                   <a href="" class="inputBlock inputLink">
                       ВХОД
                   </a>
-                  <form action="" class="inputBlock userForm">
+                  <form action="#" class="inputBlock userForm" name="userForm" method="post" enctype="multipart/form-data">
                       <input type="email" placeholder="Электронная почта">
                       <span class="userForm fakePlaceholder">Электронная почта</span>
                       <input type="password" placeholder="Пароль">
                       <span class="userForm fakePlaceholder">Пароль</span>
-                      <button type="submit" class="userForm actionLink">Войти</button>
+                      <input type="submit" class="userForm actionLink" value="Войти">
                       <a href="#">
                           Забыли пароль?
                       </a>
@@ -78,7 +78,7 @@
               <div class="userBasket">
                   <span>Пусто</span>
                   <span class="userBasket hoverBaset">2 товара</span>
-                  <form action="" class="userBasket basketForm">
+                  <form action="#" class="userBasket basketForm" name="basket" method="post" enctype="multipart/form-data">
                       <ul class="purchaseMenu">
                           <li class="purchaseMenu purchaseItem">
                               <a href="#">&#128937;</a>
@@ -94,7 +94,7 @@
                           </li>
                       </ul>
                       <span class="basketForm resultSum"><strong>Итого:</strong><strong>750 руб</strong></span>
-                      <button type="submit" class="userForm actionLink">Оформить заказ</button>
+                      <input type="submit" class="userForm actionLink" value="Оформить заказ">
                   </form>
               </div>
               <span>C 10 до 20, ежедневно</span><br>
@@ -134,8 +134,8 @@
                   </a>
               </div>
           </section>
-          <ul class="hitMenu">
-              <li class="hitMenu productItem">
+          <ul class="catalogMenu">
+              <li class="catalogMenu productItem">
                   <article class="productItem productCart">
                       <img src="img/icecream1.jpg" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой" class="productCart productImg" width="267" height="267">
                       <span class="productCart productPrice">
@@ -146,7 +146,7 @@
                       </a>
                   </article>
               </li>
-              <li class="hitMenu productItem">
+              <li class="catalogMenu productItem">
                   <article class="productItem productCart">
                       <img src="img/icecream2.jpg" alt="Сливочно-кофейное с кусочками шоколада" class="productCart productImg" width="267" height="267">
                       <span class="productCart productPrice">
@@ -157,22 +157,22 @@
                       </a>
                   </article>
               </li>
-              <li class="hitMenu productItem">
+              <li class="catalogMenu productItem">
                   <article class="productItem productCart">
                       <img src="img/icecream3.jpg" alt="Сливочно-клубничное с присыпкой из белого шоколада" class="productCart productImg" width="267" height="267">
                       <span class="productCart productPrice">
-                          455&#8381;/кг
+                          355&#8381;/кг
                       </span>
                       <a href="#" class="productCart productTitle">
                           Сливочно-клубничное с присыпкой из белого шоколада
                       </a>
                   </article>
               </li>
-              <li class="hitMenu productItem">
+              <li class="catalogMenu productItem">
                   <article class="productItem productCart">
                       <img src="img/icecream4.jpg" alt="Сливочное крем-брюле с карамельной подливкой" class="productCart productImg" width="267" height="267">
                       <span class="productCart productPrice">
-                          315&#8381;/кг
+                          415&#8381;/кг
                       </span>
                       <a href="#" class="productCart productTitle">
                           Сливочное крем-брюле с карамельной подливкой
@@ -211,12 +211,10 @@
                       Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит.
                       Обещаем не спамить и не слать всякой не нужной ерунды. Честно
                   </p>
-                  <form action="#" class="rightBlock subscribeForm" method="post">
+                  <form action="#" class="rightBlock subscribeForm" name="subscribeForm" method="post" enctype="multipart/form-data">
                       <input type="email" placeholder="Электронная почта">
                       <span class="subscribeForm fakePlaceholder">Электронная почта</span>
-                      <button class="subscribeForm actionLink" type="submit">
-                          Отправить
-                      </button>
+                      <input type="submit" class="subscribeForm actionLink" value="Отправить">
                   </form>
               </div>
           </section>
@@ -226,12 +224,12 @@
                   <span>Адрес главного офиса<br>и офлайн магазина:</span>
                   <strong>ул. Большая Конюшенная<br>19/8, Санкт-Петербург</strong>
                   <span>Для заказов по телефону:</span><br>
-                  <a href="tel:88124502525">8&#32;812&#32;450-25-25</a></br>
+                  <a href="tel:88124502525">8&#32;812&#32;450-25-25</a><br>
                   <span>(с 10 до 20 ежедневно)</span>
                   <a href="#" class="adressBlock actionLink">Форма обратной связи</a>
               </div>
               <div class="popupForm">
-                  <form action="#" class="popupForm feedbackForm" method="post">
+                  <form action="#" class="popupForm feedbackForm" name="feedbackForm" method="post" enctype="multipart/form-data">
                       <b>Мы обязательно вам ответим!</b>
                       <a href="#">&#128937;</a>
                       <input type="text" placeholder="Как вас зовут?">
@@ -239,7 +237,7 @@
                       <input type="email" placeholder="Ваша почта для ответа?">
                       <span class="feedbackForm fakePlaceholder">Ваша почта для ответа?</span>
                       <textarea name="feedback" id="feedbackText" cols="30" rows="5"></textarea>
-                      <button class="actionLink" type="submit">Отправить</button>
+                      <input type="submit" class="actionLink" value="Отправить">
                   </form>
               </div>
           </section>
