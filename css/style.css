@@ -1,4 +1,4 @@
-body {
+body {    /*здесь выбрал, как показалось наиболее распространённый вид текста на всех страницах. выбрал шрифт названия товаров*/
   font-family: "Roboto Medium";
   font-size: 16px;
   line-height: 22px;
@@ -6,19 +6,21 @@ body {
   font-weight: normal;
 }
 
-h2 {
-  font-family: "Roboto Bold";
-  font-size: 35px;
-  line-height: 412px;
+.h1 {                         /*прописал стили к установленным классам, а не к тэгам заголовков*/
+  font-family: "Roboto Black";
+  font-size: 60px;
+  line-height: 60px;
   color: #ffffff;
   font-weight: bold;
 }
 
-h3 {
+.h2 {
   font-family: "Roboto Bold";
-  font-size: 35px;
-  line-height: 412px;
+  font-size: 18px;
+  line-height: 24px;
   color: #ffffff;
   font-weight: bold;
 }
+
+
 
