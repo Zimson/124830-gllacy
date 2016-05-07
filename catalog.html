@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="siteWrapper backDefault">
-        <header class="pageHeader">
+        <header class="pageHeader clearfix">
             <div class="container">
 
                 <a href="index.html">
@@ -116,7 +116,7 @@
                             </ul>
                             <hr>
                             <div class="basketSum">
-                                <strong>Итого:</strong><strong>750 руб</strong>
+                                <strong>Итого: </strong><strong>750 руб</strong>
                             </div>
                             <button class="btn btnPrimary btnMedium" type="submit">Оформить заказ</button>
                         </form>
@@ -127,11 +127,11 @@
                 <nav class="breadcrumbs">
                     <ul class="breadcrumbsMenu">
                         <li class="breadcrumbsMenuItem">
-                            <a href="">Главная</a>
+                            <a href="index.html">Главная</a>
                             <span class="divider">&#187;</span>
                         </li>
                         <li class="breadcrumbsMenuItem">
-                            <a href="">Каталог</a>
+                            <a href="maincatalog.html">Каталог</a>
                             <span class="divider">&#187;</span>
                         </li>
                         <li class="breadcrumbsMenuItem active">
@@ -141,58 +141,44 @@
                 </nav>
             </div>
         </header>
-    </div>
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-    <div class="mainContent">
-        <div class="container">
-
-            <section class="filterBlock">
-                <form  class="filterForm" action="#" name="filterForm" method="post" enctype="multipart/form-data">
-                    <fieldset class="filterGroup">
-                        <legend>Сортировка:</legend>
-                        <div class="filterGroupContent disable"><!--добавил к обёртке группы класс disable, при нажатии будет меняться на active-->
-                            <div class="selectDropdown">
-                                <span class="selectDropdownToggle">По популярности</span><!--хочу попробовать делать этот выбор скриптом = нажимаешь на это поле - выпадает div.selectHideList и в нём делаешь выбор-->
-                                <div class="selectHideList hide">
-                                    <ul class="selectDropdownMenu">
-                                        <li class="dropdownItem" data-value="по популярности">по популярности</li>
-                                        <li class="dropdownItem" data-value="сначала недорогие">сначала недорогие</li>
-                                        <li class="dropdownItem" data-value="сначала дорогие">сначала дорогие</li>
-                                        <li class="dropdownItem" data-value="по жирности">по жирности</li>
-                                    </ul>
+        <div class="mainContent">
+            <div class="container">
+                <h1 class="h2 catalogPage clearfix">Сливочное мороженое</h1>
+                <section class="filterBlock clearfix">
+                    <!--<form  class="filterForm" action="#" name="filterForm" method="post" enctype="multipart/form-data">
+                        <fieldset class="filterGroup">
+                            <legend>Сортировка:</legend>
+                            <div class="filterGroupContent disable">&lt;!&ndash;добавил к обёртке группы класс disable, при нажатии будет меняться на active&ndash;&gt;
+                                <div class="selectDropdown">
+                                    <span class="selectDropdownToggle">По популярности</span>&lt;!&ndash;хочу попробовать делать этот выбор скриптом = нажимаешь на это поле - выпадает div.selectHideList и в нём делаешь выбор&ndash;&gt;
+                                    <div class="selectHideList hide">
+                                        <ul class="selectDropdownMenu">
+                                            <li class="dropdownItem" data-value="по популярности">по популярности</li>
+                                            <li class="dropdownItem" data-value="сначала недорогие">сначала недорогие</li>
+                                            <li class="dropdownItem" data-value="сначала дорогие">сначала дорогие</li>
+                                            <li class="dropdownItem" data-value="по жирности">по жирности</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </fieldset>
-                    /*оставил изначальный блок в комментарии, в руководстве строгое замечание, чтобы весь блок фильтров верстался формами*/
-                    <!--<fieldset class="filterGroup">
-                    <legend>Сортировка:</legend>
-                        <div class="filterGroupContent disable">&lt;!&ndash;добавил к обёртке группы класс disable, при нажатии будет меняться на active&ndash;&gt;
-                            <legend>Сортировка:</legend>
-                            <select name="sort">
-                                <option selected value="по популярности">по популярности</option>
-                                <option value="по популярности">по популярности</option>
-                                <option value="сначала недорогие">сначала недорогие</option>
-                                <option value="сначала дорогие">сначала дорогие</option>
-                                <option value="по жирности">по жирности</option>
-                            </select>
-                        </div>
-                    </fieldset>-->
+                        </fieldset>
+                        /*оставил изначальный блок в комментарии, в руководстве строгое замечание, чтобы весь блок фильтров верстался формами*/
+                        &lt;!&ndash;<fieldset class="filterGroup">
+                        <legend>Сортировка:</legend>
+                            <div class="filterGroupContent disable">&lt;!&ndash;добавил к обёртке группы класс disable, при нажатии будет меняться на active&ndash;&gt;
+                                <legend>Сортировка:</legend>
+                                <select name="sort">
+                                    <option selected value="по популярности">по популярности</option>
+                                    <option value="по популярности">по популярности</option>
+                                    <option value="сначала недорогие">сначала недорогие</option>
+                                    <option value="сначала дорогие">сначала дорогие</option>
+                                    <option value="по жирности">по жирности</option>
+                                </select>
+                            </div>
+                        </fieldset>&ndash;&gt;
 
-                    <fieldset class="filterGroup">
-                        <legend>Цена: 100 руб. – 500 руб.</legend>
+                        <fieldset class="filterGroup">
+                            <legend>Цена: 100 руб. – 500 руб.</legend>
                             <div class="filterGroupContent disable">
                                 <div class="slider">
                                     <span class="handle"></span>
@@ -200,272 +186,293 @@
                                     <div></div>
                                 </div>
                             </div>
-                    </fieldset>
-                    <!--также комментирую вариант с формой-->
-                    <!--<fieldset>
-                        <legend>Цена: 100 руб. – 500 руб.</legend>
-                        <input type="range" min="100" max="500" step="5" value="100">
-                    </fieldset>-->
+                        </fieldset>
+                        &lt;!&ndash;также комментирую вариант с формой&ndash;&gt;
+                        &lt;!&ndash;<fieldset>
+                            <legend>Цена: 100 руб. – 500 руб.</legend>
+                            <input type="range" min="100" max="500" step="5" value="100">
+                        </fieldset>&ndash;&gt;
 
-                    <fieldset class="filterGroup">
-                        <legend>Жирность:</legend>
+                        <fieldset class="filterGroup">
+                            <legend>Жирность:</legend>
                             <div class="filterGroupContent disable">
                                 <label class="radio"><input type="radio" name="fatness">0%</label>
                                 <label class="radio checked"><input type="radio" name="fatness" checked>до 10%</label>
                                 <label class="radio"><input type="radio" name="fatness">до 30%</label>
                                 <label class="radio"><input type="radio" name="fatness">выше 30%</label>
                             </div>
-                    </fieldset>
+                        </fieldset>
 
-                    <fieldset class="filterGroup">
-                        <legend>Наполнители:</legend>
-                        <div class="filterGroupContent disable">
-                            <label class="checkbox checked"><input type="checkbox" name="filler" value="шоколадные" checked>шоколадные</label>
-                            <label class="checkbox checked"><input type="checkbox" name="filler" value="сахарные присыпки" checked>сахарные присыпки</label>
-                            <label class="checkbox"><input type="checkbox" name="filler" value="фрукты">фрукты</label>
-                            <label class="checkbox"><input type="checkbox" name="filler" value="сиропы">сиропы</label>
-                            <label class="checkbox"><input type="checkbox" name="filler" value="джемы">джемы</label>
-                        </div>
-                    </fieldset>
-                    <button class="btn btnDefault btnSmall btnBordered" type="submit"><a href="about:blank" target="_blank">Применить</a></button>/*добавил в кнопку ссылку, в задание нужно, чтобы форма вела на пустую страницу при отключенном скрипте*/
-                </form>
-            </section>
-
-            <section class="productList"><!--раздел товаров, как на главной, без метки "Хит"-->
-                <article class="productItem disable"><!--класс disable поменяется на  hover при наведении, отобразиться весь блок с кнопкой "Быстрый просмотр", в обычном состоянии она обрезана-->
-                    <img class="productItemImg" src="img/icecream1.jpg" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой" width="267" height="267">
-                    <span class="productItemPrice">
-                        <span>310&#8381;</span>/кг <!--знак рубля пока не понял, картинкой или так поставить, вырезал svg на будущее-->
-                    </span>
-                    <h3 class="productItemTitle">
-                        <a href="#">
-                            Сливочное с апельсиновым джемом и цитрусовой стружкой
-                        </a>
-                    </h3>
-                    <a href="#" class="btn btnMedium btnPrimary">Быстрый просмотр</a>
-                </article>
-
-                <article class="productItem disable">
-                    <img class="productItemImg" src="img/icecream2.jpg" alt="Сливочно-кофейное с кусочками шоколада" width="267" height="267">
-                    <span class="productItemPrice">
-                        <span>380&#8381;</span>/кг
-                    </span>
-                    <h3 class="productItemTitle">
-                        <a href="#">
-                            Сливочно-кофейное с кусочками шоколада
-                        </a>
-                    </h3>
-                    <a href="#" class="btn btnMedium btnPrimary">Быстрый просмотр</a>
-                </article>
-
-                <article class="productItem disable">
-                    <span class="productItemHitmark"></span>
-                    <img class="productItemImg" src="img/icecream3.jpg" alt="Сливочно-клубничное с присыпкой из белого шоколада" width="267" height="267">
-                      <span class="productItemPrice">
-                          <span>355&#8381;</span>/кг
-                      </span>
-                    <h3 class="productItemTitle">
-                        <a href="#">
-                            Сливочно-клубничное с присыпкой из белого шоколада
-                        </a>
-                    </h3>
-                    <a href="#" class="btn btnMedium btnPrimary">Быстрый просмотр</a>
-                </article>
-
-                <article class="productItem disable">
-                    <img class="productItemImg" src="img/icecream3.jpg" alt="Сливочное крем-брюле с карамельной подливкой" width="267" height="267">
+                        <fieldset class="filterGroup">
+                            <legend>Наполнители:</legend>
+                            <div class="filterGroupContent disable">
+                                <label class="checkbox checked"><input type="checkbox" name="filler" value="шоколадные" checked>шоколадные</label>
+                                <label class="checkbox checked"><input type="checkbox" name="filler" value="сахарные присыпки" checked>сахарные присыпки</label>
+                                <label class="checkbox"><input type="checkbox" name="filler" value="фрукты">фрукты</label>
+                                <label class="checkbox"><input type="checkbox" name="filler" value="сиропы">сиропы</label>
+                                <label class="checkbox"><input type="checkbox" name="filler" value="джемы">джемы</label>
+                            </div>
+                        </fieldset>
+                        <button class="btn btnDefault btnSmall btnBordered" type="submit"><a href="about:blank" target="_blank">Применить</a></button>/*добавил в кнопку ссылку, в задание нужно, чтобы форма вела на пустую страницу при отключенном скрипте*/
+                    </form>-->
+                </section>
+                <section class="productList catalogPage clearfix">
+                    <article class="productItem catalogPage">
+                        <img class="productItemImg" src="img/orangeice.png" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой" width="267" height="267">
                         <span class="productItemPrice">
-                            <span>415&#8381;</span>/кг
+                            <span class="productPrice">310</span>
+                            <span class="productRubleIco"></span>
+                            <span class="productWeight">/кг</span>
                         </span>
-                    <h3 class="productItemTitle">
-                        <a href="#">
-                            Сливочное крем-брюле с карамельной подливкой
-                        </a>
-                    </h3>
-                    <a href="#" class="btn btnMedium btnPrimary">Быстрый просмотр</a>
-                </article>
+                        <h4 class="h4">
+                            <a class="productTitle" href="#">
+                                Сливочное с апельсиновым джемом и цитрусовой стружкой
+                            </a>
+                        </h4>
+                        <a class="btn btnMedium btnPrimary none" href="#">Быстрый просмотр</a>
+                        <div class="hoverBlock none"></div>
+                    </article>
 
-                <article class="productItem disable">
-                    <img class="productItemImg" src="img/icecream3.jpg" alt="Сливочное с брусничным джемом" width="267" height="267">
-                        <span class="productItemPrice">
-                            <span>325&#8381;/кг</span>/кг
-                        </span>
-                    <h3 class="productItemTitle">
-                        <a href="#">
-                            Сливочное с брусничным джемом
-                        </a>
-                    </h3>
-                    <a href="#" class="btn btnMedium btnPrimary">Быстрый просмотр</a>
-                </article>
+                    <article class="productItem catalogPage">
+                        <img class="productItemImg" src="img/coffeeice.png" alt="Сливочно-кофейное с кусочками шоколада" width="267" height="267">
+                       <span class="productItemPrice">
+                           <span class="productPrice">380</span>
+                           <span class="productRubleIco"></span>
+                           <span class="productWeight">/кг</span>
+                       </span>
+                        <h4 class="h4">
+                            <a class="productTitle" href="#">
+                                Сливочно-кофейное с кусочками шоколада
+                            </a>
+                        </h4>
+                        <a class="btn btnMedium btnPrimary none" href="#">Быстрый просмотр</a>
+                        <div class="hoverBlock none"></div>
+                    </article>
 
-                <article class="productItem disable">
-                    <img class="productItemImg" src="img/icecream3.jpg" alt="Сливочно-черничное с цельными ягодами черники" width="267" height="267">
+                    <article class="productItem catalogPage">
+                        <img class="productItemImg" src="img/strawberryice.png" alt="Сливочно-клубничное с присыпкой из белого шоколада" width="267" height="267">
                         <span class="productItemPrice">
-                            <span>410&#8381;/кг</span>/кг
+                            <span class="productPrice">355</span>
+                            <span class="productRubleIco"></span>
+                            <span class="productWeight">/кг</span>
                         </span>
-                    <h3 class="productItemTitle">
-                        <a href="#">
-                            Сливочно-черничное с цельными ягодами черники
-                        </a>
-                    </h3>
-                    <a href="#" class="btn btnMedium btnPrimary">Быстрый просмотр</a>
-                </article>
+                        <h4 class="h4">
+                            <a class="productTitle" href="#">
+                                Сливочно-клубничное с присыпкой из белого шоколада
+                            </a>
+                        </h4>
+                        <a class="btn btnMedium btnPrimary none" href="#">Быстрый просмотр</a>
+                        <div class="hoverBlock none"></div>
+                    </article>
 
-                <article class="productItem disable">
-                    <img class="productItemImg" src="img/icecream3.jpg" alt="Сливочно-лимонное с карамельной присыпкой" width="267" height="267">
+                    <article class="productItem catalogPage">
+                        <img class="productItemImg" src="img/bruleeice.png" alt="Сливочное крем-брюле с карамельной подливкой" width="267" height="267">
                         <span class="productItemPrice">
-                            <span>375&#8381;/кг</span>/кг
+                            <span class="productPrice">415</span>
+                            <span class="productRubleIco"></span>
+                            <span class="productWeight">/кг</span>
                         </span>
-                    <h3 class="productItemTitle">
-                        <a href="#">
-                            Сливочно-лимонное с карамельной присыпкой
-                        </a>
-                    </h3>
-                    <a href="#" class="btn btnMedium btnPrimary">Быстрый просмотр</a>
-                </article>
+                        <h4 class="h4">
+                            <a class="productTitle" href="#">
+                                Сливочное крем-брюле с карамельной подливкой
+                            </a>
+                        </h4>
+                        <a class="btn btnMedium btnPrimary none" href="#">Быстрый просмотр</a>
+                        <div class="hoverBlock none"></div>
+                    </article>
 
-                <article class="productItem disable">
-                    <img class="productItemImg" src="img/icecream3.jpg" alt="Сливочное с шоколадной стружкой" width="267" height="267">
+                    <article class="productItem catalogPage">
+                        <img class="productItemImg" src="img/cowberryice.png" alt="Сливочное с брусничным джемом" width="267" height="267">
                         <span class="productItemPrice">
-                            <span>320&#8381;/кг</span>/кг
+                            <span class="productPrice">325</span>
+                            <span class="productRubleIco"></span>
+                            <span class="productWeight">/кг</span>
                         </span>
-                    <h3 class="productItemTitle">
-                        <a href="#">
-                            Сливочное с шоколадной стружкой
-                        </a>
-                    </h3>
-                    <a href="#" class="btn btnMedium btnPrimary">Быстрый просмотр</a>
-                </article>
+                        <h4 class="h4">
+                            <a class="productTitle" href="#">
+                                Сливочное с брусничным<br>джемом
+                            </a>
+                        </h4>
+                        <a class="btn btnMedium btnPrimary none" href="#">Быстрый просмотр</a>
+                        <div class="hoverBlock none"></div>
+                    </article>
 
-                <article class="productItem disable">
-                    <img class="productItemImg" src="img/icecream3.jpg" alt="Сливочно-ванильное с кусочками шоколада" width="267" height="267">
+                    <article class="productItem catalogPage">
+                        <img class="productItemImg" src="img/blueberryice.png" alt="Сливочно-черничное с цельными ягодами черники" width="267" height="267">
                         <span class="productItemPrice">
-                            <span>440&#8381;/кг</span>/кг
+                            <span class="productPrice">410</span>
+                            <span class="productRubleIco"></span>
+                            <span class="productWeight">/кг</span>
                         </span>
-                    <h3 class="productItemTitle">
-                        <a href="#">
-                            Сливочно-ванильное с кусочками шоколада
-                        </a>
-                    </h3>
-                    <a href="#" class="btn btnMedium btnPrimary">Быстрый просмотр</a>
-                </article>
+                        <h4 class="h4">
+                            <a class="productTitle" href="#">
+                                Сливочно-черничное с цельными ягодами черники
+                            </a>
+                        </h4>
+                        <a class="btn btnMedium btnPrimary none" href="#">Быстрый просмотр</a>
+                        <div class="hoverBlock none"></div>
+                    </article>
 
-                <article class="productItem disable">
-                    <img class="productItemImg" src="img/icecream3.jpg" alt="Сливочноe с ментоловым сиропом" width="267" height="267">
+                    <article class="productItem catalogPage">
+                        <img class="productItemImg" src="img/lemonice.png" alt="Сливочно-лимонное с карамельной присыпкой" width="267" height="267">
                         <span class="productItemPrice">
-                            <span>435&#8381;/кг</span>/кг
+                            <span class="productPrice">375</span>
+                            <span class="productRubleIco"></span>
+                            <span class="productWeight">/кг</span>
                         </span>
-                    <h3 class="productItemTitle">
-                        <a href="#">
-                            Сливочноe с ментоловым сиропом
-                        </a>
-                    </h3>
-                    <a href="#" class="btn btnMedium btnPrimary">Быстрый просмотр</a>
-                </article>
+                        <h4 class="h4">
+                            <a class="productTitle" href="#">
+                                Сливочно-лимонное с карамельной присыпкой
+                            </a>
+                        </h4>
+                        <a class="btn btnMedium btnPrimary none" href="#">Быстрый просмотр</a>
+                        <div class="hoverBlock none"></div>
+                    </article>
 
-                <article class="productItem disable">
-                    <img class="productItemImg" src="img/icecream3.jpg" alt="Сливочное с кусочками черного шоколада" width="267" height="267">
+                    <article class="productItem catalogPage">
+                        <img class="productItemImg" src="img/chocoice.png" alt="Сливочное с шоколадной стружкой" width="267" height="267">
                         <span class="productItemPrice">
-                            <span>355&#8381;/кг</span>/кг
+                            <span class="productPrice">320</span>
+                            <span class="productRubleIco"></span>
+                            <span class="productWeight">/кг</span>
                         </span>
-                    <h3 class="productItemTitle">
-                        <a href="#">
-                            Сливочное с кусочками черного шоколада
-                        </a>
-                    </h3>
-                    <a href="#" class="btn btnMedium btnPrimary">Быстрый просмотр</a>
-                </article>
+                        <h4 class="h4">
+                            <a class="productTitle" href="#">
+                                Сливочное с шоколадной стружкой
+                            </a>
+                        </h4>
+                        <a class="btn btnMedium btnPrimary none" href="#">Быстрый просмотр</a>
+                        <div class="hoverBlock none"></div>
+                    </article>
 
-                <article class="productItem disable">
-                    <img class="productItemImg" src="img/icecream3.jpg" alt="Сливочное с мятным сиропом" width="267" height="267">
+                    <article class="productItem catalogPage">
+                        <img class="productItemImg" src="img/vanillaice.png" alt="Сливочно-ванильное с кусочками шоколада" width="267" height="267">
                         <span class="productItemPrice">
-                            <span>420&#8381;/кг</span>/кг
+                            <span class="productPrice">440</span>
+                            <span class="productRubleIco"></span>
+                            <span class="productWeight">/кг</span>
                         </span>
-                    <h3 class="productItemTitle">
-                        <a href="#">
-                            Сливочное с мятным сиропом
-                        </a>
-                    </h3>
-                    <a href="#" class="btn btnMedium btnPrimary">Быстрый просмотр</a>
-                </article>
-            </section>
-            <nav class="pagination">
-                <ul class="paginationMenu">
-                    <li class="paginationItem disabled">
-                        <span></span>
-                    </li>
-                    <li class="paginationItem active">
-                        <a href="#">
-                            1
-                        </a>
-                    </li>
-                    <li class=" paginationItem">
-                        <a href="#">
-                            2
-                        </a>
-                    </li>
-                    <li class=" paginationItem">
-                        <a href="#">
-                            3
-                        </a>
-                    </li>
-                    <li class=" paginationItem">
-                        <a href="#">
-                            4
-                        </a>
-                    </li>
-                    <li class=" paginationItem">
-                        <a href="#">
-                            5
-                        </a>
-                    </li>
-                    <li class="paginationItem">
-                        <a href="#"></a>
-                    </li>
-                </ul>
-            </nav>
+                        <h4 class="h4">
+                            <a class="productTitle" href="#">
+                                Сливочно-ванильное с <br>кусочками шоколада
+                            </a>
+                        </h4>
+                        <a class="btn btnMedium btnPrimary none" href="#">Быстрый просмотр</a>
+                        <div class="hoverBlock none"></div>
+                    </article>
+
+                    <article class="productItem catalogPage">
+                        <img class="productItemImg" src="img/mintice.png" alt="Сливочноe с ментоловым сиропом" width="267" height="267">
+                        <span class="productItemPrice">
+                            <span class="productPrice">435</span>
+                            <span class="productRubleIco"></span>
+                            <span class="productWeight">/кг</span>
+                        </span>
+                        <h4 class="h4">
+                            <a class="productTitle" href="#">
+                                Сливочноe с ментоловым сиропом
+                            </a>
+                        </h4>
+                        <a class="btn btnMedium btnPrimary none" href="#">Быстрый просмотр</a>
+                        <div class="hoverBlock none"></div>
+                    </article>
+
+                    <article class="productItem catalogPage">
+                        <img class="productItemImg" src="img/creamyice.png" alt="Сливочное с кусочками черного шоколада" width="267" height="267">
+                        <span class="productItemPrice">
+                            <span class="productPrice">355</span>
+                            <span class="productRubleIco"></span>
+                            <span class="productWeight">/кг</span>
+                        </span>
+                        <h4 class="h4">
+                            <a class="productTitle" href="#">
+                                Сливочное с кусочками черного шоколада
+                            </a>
+                        </h4>
+                        <a class="btn btnMedium btnPrimary none" href="#">Быстрый просмотр</a>
+                        <div class="hoverBlock none"></div>
+                    </article>
+
+                    <article class="productItem catalogPage">
+                        <img class="productItemImg" src="img/syrupice.png" alt="Сливочное с мятным сиропом" width="267" height="267">
+                        <span class="productItemPrice">
+                            <span class="productPrice">420</span>
+                            <span class="productRubleIco"></span>
+                            <span class="productWeight">/кг</span>
+                        </span>
+                        <h4 class="h4">
+                            <a class="productTitle" href="#">
+                                Сливочное с мятным сиропом
+                            </a>
+                        </h4>
+                        <a class="btn btnMedium btnPrimary none" href="#">Быстрый просмотр</a>
+                        <div class="hoverBlock none"></div>
+                    </article>
+                    <nav>
+                        <ul class="pagination">
+                            <li class="disabled">
+                                <span aria-hidden="true">&#12296;</span>
+                            </li>
+                            <li class="disabled">
+                                <span>1</span>
+                            </li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li>
+                                <a href="#" aria-label="Следующая">
+                                    <span aria-hidden="true">&#12297;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </section>
+                <hr class="bigHR">
+            </div>
         </div>
+        <footer class="pageFooter catalogPage">
+            <div class="container">
+                <div class="pageFooterSocial">
+                    <ul class="socialMenu">
+                        <li class="socialItem">
+                            <a class="linkTwitter" href="https://twitter.com"></a>
+                        </li>
+                        <li class="socialItem">
+                            <a class="linkInstagram" href="https://www.instagram.com"></a>
+                        </li>
+                        <li class="socialItem">
+                            <a class="linkFacebook" href="https://www.facebook.com"></a>
+                        </li>
+                        <li class="socialItem">
+                            <a class="linkVkontakte" href="https://vk.com"></a>
+                        </li>
+                    </ul>
+                </div>
+                <nav class="pageFooterNav">
+                    <ul class="pageFooterMenu">
+                        <li class="footerMenuItem">
+                            <a class='heartIco' href="#">Для поставщиков</a>
+                        </li>
+                        <li class="footerMenuItem">
+                            <a href="#">Наши документы</a>
+                        </li>
+                        <li class="footerMenuItem">
+                            <a href="#">О производстве </a>
+                        </li>
+                        <li class="footerMenuItem">
+                            <a href="#">Экологические стандарты</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="pageFooterDev">
+                    <a class="subLogo" href="https://htmlacademy.ru">
+                        <img src="img/htmllogo.svg" alt="HTMLAcademyLogo" width="108" height="37">
+                    </a><br>
+                    Сделано в <a class="subContacts" href="https://htmlacademy.ru">HTML Academy</a> &#169; 2016
+                </div>
+            </div>
+        </footer>
     </div>
-    <footer class="pageFooter">
-        <div class="container">
-            <div class="pageFooterSocial">
-                <ul class="socialMenu">
-                    <li class="socialItem">
-                        <a href="https://twitter.com">
-                            <img src="img/twitter.png" alt="twitter" width="40" height="40">
-                        </a>
-                    </li>
-                    <li class="socialItem">
-                        <a href="https://www.instagram.com">
-                            <img src="img/instagram.png" alt="instagram" width="40" height="40">
-                        </a>
-                    </li>
-                    <li class="socialItem">
-                        <a href="https://www.facebook.com">
-                            <img src="img/facebook.jpg" alt="facebook" width="40" height="40">
-                        </a>
-                    </li>
-                    <li class="socialItem">
-                        <a href="https://vk.com">
-                            <img src="img/vkontakte.jpg" alt="vkontakte" width="40" height="40">
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="pageFooterNav">
-                <ul>
-                    <li><a href="#">Для поставщиков</a></li>
-                    <li><a href="#">Для поставщиков</a></li>
-                    <li><a href="#">Для поставщиков</a></li>
-                    <li><a href="#">Для поставщиков</a></li>
-                </ul>
-            </div>
-            <div class="pageFooterDev">
-                <a href="https://htmlacademy.ru" class="subContacts subLogo">
-                    <img src="img/sublogo.jpg" alt="HTMLAcademy">
-                </a><br>
-                Сделано в <a href="https://htmlacademy.ru" class="subContacts subLogo">HTML Academy</a> &#169; 2016
-            </div>
-        </div>
-    </footer>
-    <script src="js/main.js"></script>
+</body>
+</html>
