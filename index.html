@@ -1,24 +1,34 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <meta charset="utf-8">
-    <title>Глейси</title>
-    <link rel="stylesheet" href="css/style.css">
+      <meta charset="utf-8">
+      <title>Глейси</title>
+      <!--<link href='https://fonts.googleapis.com/css?family=Roboto:400,700,700italic,400italic,500,500italic&subset=cyrillic,latin' rel='stylesheet' type='text/css'>-->
+      <link href='https://fonts.googleapis.com/css?family=Roboto:400,900,900italic,700,500&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="css/normalize.css">
+      <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
+  <input class="firstBtn" type="radio" id="btn1" name="toggle" checked><!--реализация слайдера из лекции-->
+  <input class="secondBtn" type="radio" id="btn2" name="toggle">
+  <input class="thirdBtn" type="radio" id="btn3" name="toggle">
+  <div class="siteWrapper">
       <header class="pageHeader">
           <div class="container">
 
-              <img class="logoImg" src="img/logo.jpg" alt="GllacyShop"  width="160" height="65">
+              <img class="logoImg" src="img/logo.svg" alt="GllacyShop"  width="160" height="65">
               <nav class="pageHeaderMenu">
+
                   <ul class="pageHeaderList">
                       <li class="item dropdown">
                           <a class="itemLink dropdownToggle" href="catalog.html">
-                              Каталог
+                              <span class="dropdownTitle">Каталог</span>
                           </a>
-                          <ul class="dropdownMenu">
+                          <ul class="dropdownMenu none">
                               <li class="dropdownMenuItem">
-                                  <a class="dropdownMenuLink" href="#"></a>Новинки
+                                  <a href="dropdownMenuLink">
+                                      Новинки
+                                  </a>
                               </li>
                               <li class="dropdownMenuItem">
                                   <a class="dropdownMenuLink" href="#">
@@ -49,95 +59,87 @@
                       </li>
                       <li class="item">
                           <a class="itemLink" href="#">
-                              О компании
+                              О Компании
                           </a>
                       </li>
                   </ul>
               </nav>
 
               <div class="searchBlock"><!--searchBlock open--> <!--у элементов с ховером добавил комментарии со вторым классом open-->
-                  <a class="btn btnDefault btnSmall" href="#">
+                  <a class="searchLink btn btnDefault btnSmall" href="#">
                       <span class="searchImg"></span><!--поменял img на span под картинку фоном-->
                   </a>
-                  <form class="searchForm" action="#" name="searchForm" method="post" enctype="multipart/form-data">
-                      <input class="searchInput" type="text" placeholder="Что ищём?">
+                  <form class="searchForm none" action="#" name="searchForm" method="post" enctype="multipart/form-data">
+                      <input class="inputText" type="text" placeholder="Что ищём?">
                   </form>
               </div>
 
               <div class="user"><!-- <div class="user open"> -->
                   <div class="userEnter">
-                      <a class="btn btnDefault btnSmall" href="">
+                      <a class="enterLink btn btnDefault btnSmall" href="">
                           <i class="ico icoEnter"></i>
-                          ВХОД
+                          <span class="enterTitle">Вход</span>
                       </a>
-                      <form class="userForm" action="#" name="userForm" method="post" enctype="multipart/form-data">
+                      <form class="userForm none" action="#" name="userForm" method="post" enctype="multipart/form-data" hidden>
                           <input class="inputText" type="email" placeholder="Электронная почта">
-                          <span class="fakePlaceholder">Электронная почта</span>
+                          <span class="fakePlaceholder fakeEmail none">Электронная почта</span>
                           <input class="inputText" type="password" placeholder="Пароль">
-                          <span class="fakePlaceholder">Пароль</span>
+                          <span class="fakePlaceholder fakePassword none">Пароль</span>
                           <button class="btn btnPrimary btnMedium" type="submit">Войти</button>
-                          <a class="userLink" href="#">
-                              Забыли пароль?
-                          </a>
-                          <a class="userLink" href="#">
-                              Новая регистрация
-                          </a>
+                          <div class="helpInfo">
+                              <a class="userLink" href="#">
+                                  Забыли пароль?
+                              </a>
+                              <a class="userLink" href="#">
+                                  Новая регистрация
+                              </a>
+                          </div>
                       </form>
                   </div>
                   <div class="userBasket">
                       <a class="btn btnDefault btnSmall" href="#"><!--корзина по умолчанию будет как есть, класс fullBasket добавил в корзину на странице каталога-->
-                          <i class="ico icoBasket"></i>
-                          Пусто
+                          <i class="ico icoEmptyBasket"></i>
+                          <span class="enterBasket">Пусто</span>
                       </a>
                   </div>
                   <span class="userTime">C 10 до 20, ежедневно</span>
-                  <a class="userPhone" href="tel:88124502525">8&#32;812&#32;450-25-25</a>
+                  <a class="userPhone" href="tel:88124502525">8&nbsp;812&nbsp;450-25-25</a>
               </div>
 
           </div>
       </header>
-      <div class="mainContent"><!--внешний блок выделил в mainContent, а container вложил в него-->
+      <div class="mainContent">
           <div class="container">
-              <section class="slider">
-                  <ul class="sliderBox">
-                      <li class="sliderBoxItem active">
-                          <img class="sliderBoxImg" src="#" alt="Brule&Plumber" width="648" height="584">
-                          <h2 class="h1">
-                              Крем-брюле и пломбир с малиновым джемом
-                          </h2>
-                          <a class="btn btnLarge btnPrimary" href="#">
-                              Давайте оба!
-                          </a>
-                      </li>
-                      <li class="sliderBoxItem">
-                          <img class="sliderBoxImg" src="#" alt="Plmber&Lemon" width="648" height="584">
-                          <h2 class="h1">
-                              Шоколадный пломбир и лимонный сорбет
-                          </h2>
-                          <a class="btn btnLarge btnPrimary" href="#">
-                              Давайте оба!
-                          </a>
-                      </li>
-                      <li class="sliderBoxItem">
-                          <img class="sliderBoxImg" src="#" alt="Strawberry&Plumber" width="648" height="584">
-                          <h2 class="h1">
-                              Пломбир с помадкой и клубничный щербет
-                          </h2>
-                          <a class="btn btnLarge btnPrimary" href="#">
-                              Давайте оба!
-                          </a>
-                      </li>
-                  </ul>
-                  <nav class="sliderNav">
-                      <ul class="sliderList"> <!--добавил класс к кнопкам навигации-->
-                          <li class="listItem active"><a href="#"></a></li>
-                          <li class="listItem"><a href="#"></a></li>
-                          <li class="listItem"><a href="#"></a></li>
-                      </ul>
-                  </nav>
+              <section class="slider clearfix"><!--реализация слайдера из лекции-->
+                  <div class="slide firstItem" id="slide1">
+                      <span class="h1 top"><!--заменил на  заголовок на спаны - по-разному они размещались на линиях-->
+                              Крем-брюле и пломбир
+                          </span>
+                      <span class="h1 bot">с малиновым джемом</span>
+                      <a class="btn btnLarge btnPrimary" href="#">Давайте оба!</a>
+                  </div>
+                  <div class="slide secondItem" id="slide2">
+                      <span class="h1 top">
+                              Шоколадный пломбир
+                          </span>
+                      <span class="h1 bot">и лимонный сорбет</span>
+                      <a class="btn btnLarge btnPrimary" href="#">Давайте оба!</a>
+                  </div>
+                  <div class="slide thirdItem" id="slide3">
+                      <span class="h1 top">
+                              Пломбир с помадкой
+                          </span>
+                      <span class="h1 bot">и клубничный щербет</span>
+                      <a class="btn btnLarge btnPrimary" href="#">Давайте оба!</a>
+                  </div>
+                  <div class="sliderControls">
+                      <label class="firstLabel" for="btn1"></label>
+                      <label class="secondLabel" for="btn2"></label>
+                      <label class="thirdLabel" for="btn3"></label>
+                  </div>
               </section>
 
-              <section class="bannerBlock">
+              <section class="bannerBlock clearfix">
                   <div class="bannerLeftBlock">
                       <h2 class="h2">
                           Малинка даром!
@@ -162,122 +164,126 @@
                   </div>
               </section>
 
-              <section class="productList"><!--раздел хитов выделил в отдельный блок-->
+              <section class="productList clearfix"><!--раздел хитов выделил в отдельный блок-->
                   <article class="productItem">
                       <span class="productItemHitmark"></span><!--метку "Хит" предполагаю в спан фоном вставить-->
-                      <img class="productItemImg" src="img/icecream1.jpg" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой" width="267" height="267">
+                      <img class="productItemImg" src="img/orangeice.png" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой" width="267" height="267">
                       <span class="productItemPrice">
-                          <span>310&#8381;</span>/кг <!--знак рубля пока не понял, картинкой или так поставить, вырезал svg на будущее-->
+                          <span class="productPrice">310</span>
+                          <span class="productRubleIco"></span>
+                          <span class="productWeight">/кг</span>
                       </span>
-                      <h3 class="productItemTitle">
+                      <h4 class="h4">
                           <a href="#">
                               Сливочное с апельсиновым джемом и цитрусовой стружкой
                           </a>
-                      </h3>
+                      </h4>
                   </article>
                   <article class="productItem">
                       <span class="productItemHitmark"></span>
-                      <img class="productItemImg" src="img/icecream2.jpg" alt="Сливочно-кофейное с кусочками шоколада" width="267" height="267">
+                      <img class="productItemImg" src="img/coffeeice.png" alt="Сливочно-кофейное с кусочками шоколада" width="267" height="267">
                       <span class="productItemPrice">
-                          <span>380&#8381;</span>/кг <!--знак рубля пока не понял, картинкой или так поставить, вырезал svg на будущее-->
+                          <span class="productPrice">380</span>
+                          <span class="productRubleIco"></span>
+                          <span class="productWeight">/кг</span>
                       </span>
-                      <h3 class="productItemTitle">
+                      <h4 class="h4">
                           <a href="#">
                               Сливочно-кофейное с кусочками шоколада
                           </a>
-                      </h3>
+                      </h4>
                   </article>
                   <article class="productItem">
                       <span class="productItemHitmark"></span>
-                      <img class="productItemImg" src="img/icecream3.jpg" alt="Сливочно-клубничное с присыпкой из белого шоколада" width="267" height="267">
+                      <img class="productItemImg" src="img/strawberryice.png" alt="Сливочно-клубничное с присыпкой из белого шоколада" width="267" height="267">
                       <span class="productItemPrice">
-                          <span>355&#8381;</span>/кг <!--знак рубля пока не понял, картинкой или так поставить, вырезал svg на будущее-->
+                          <span class="productPrice">355</span>
+                          <span class="productRubleIco"></span>
+                          <span class="productWeight">/кг</span>
                       </span>
-                      <h3 class="productItemTitle">
+                      <h4 class="h4">
                           <a href="#">
                               Сливочно-клубничное с присыпкой из белого шоколада
                           </a>
-                      </h3>
+                      </h4>
                   </article>
                   <article class="productItem">
                       <span class="productItemHitmark"></span>
-                      <img class="productItemImg" src="img/icecream3.jpg" alt="Сливочное крем-брюле с карамельной подливкой" width="267" height="267">
+                      <img class="productItemImg" src="img/bruleeice.png" alt="Сливочное крем-брюле с карамельной подливкой" width="267" height="267">
                       <span class="productItemPrice">
-                          <span>415&#8381;</span>/кг <!--знак рубля пока не понял, картинкой или так поставить, вырезал svg на будущее-->
+                          <span class="productPrice">415</span>
+                          <span class="productRubleIco"></span>
+                          <span class="productWeight">/кг</span>
                       </span>
-                      <h3 class="productItemTitle">
+                      <h4 class="h4">
                           <a href="#">
                               Сливочное крем-брюле с карамельной подливкой
                           </a>
-                      </h3>
+                      </h4>
                   </article>
               </section>
 
-              <section class="advertisingBlock">
+              <section class="advertisingBlock clearfix">
                   <h3 class="h3">Магазин Глейси — это онлайн и офлайн магазин по продаже мороженого собственного производства на
                       развес
                   </h3>
-                  <p class="advertItem">
-                      Все наше мороженое изготавливается на собственном производстве, с использованием современного оборудования и проверенных временем технологий.
-                  </p>
-                  <p class="advertItem">
-                      Для приготовления мороженого используются настоящие сливки и молоко высочайшего качества. Все дополнительные ингредиенты и добавки произведены из натурального, экологически чистого сырья.
-                  </p>
-                  <p class="advertItem">
-                      Закупка ингредиентов  производится только у проверенных фермерских хозяйств и компаний, с которыми нас связывает долговременное сотрудничество.
-                  </p>
-                  <p class="advertItem">
-                      Доставка нашего мороженого до заказчиков осуществляется в специальном термопаке, который не дает мороженому растаять в пути и позволяет ему сохранить свой превосходный вкус.
-                  </p>
+                  <div class="advertisingContainer">
+                      <p class="advertItem iceIco">
+                          Все наше мороженое изготавливается на собственном производстве, с использованием современного оборудования и проверенных временем технологий.
+                      </p>
+                      <p class="advertItem cowIco">
+                          Закупка ингредиентов  производится только у проверенных фермерских хозяйств и компаний, с которыми нас связывает долговременное сотрудничество.
+                      </p>
+                      <p class="advertItem leafIco">
+                          Для приготовления мороженого используются настоящие сливки и молоко высочайшего качества. Все дополнительные ингредиенты и добавки произведены из натурального, экологически чистого сырья.
+                      </p>
+                      <p class="advertItem thermIco">
+                          Доставка нашего мороженого до заказчиков осуществляется в специальном термопаке, который не дает мороженому растаять в пути и позволяет ему сохранить свой превосходный вкус.
+                      </p>
+                  </div>
               </section>
 
-              <section class="newsBlock">
+              <section class="newsBlock clearfix">
                   <div class="newsBlockLeft">
                       <p>Новое в нашем блоге</p>
-                      <h3 class="h3">
+                      <h4 class="h4">
                           <a href="#">
-                              10 способов сервировки фруктовых щербетов к столу
+                              10 способов сервировки<br> фруктовых щербетов<br> к столу
                           </a>
-                      </h3>
+                      </h4>
                   </div>
                   <div class="newsBlockRight">
-                      <p>
-                          Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит.
-                          Обещаем не спамить и не слать всякой не нужной ерунды. Честно
-                      </p>
-                      <form class="subscribeForm" action="#"name="subscribeForm" method="post" enctype="multipart/form-data">
-                          <input class="inputText" type="email" placeholder="Электронная почта">
-                          <span class="fakePlaceholder">Электронная почта</span>
-                          <button class="btn btnPrimary btnMedium" type="submit">Отправить</button>
-                      </form>
+                      <div class="newsSubstrate">
+                          <p>
+                              Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит.
+                              Обещаем не спамить и не слать всякой не нужной ерунды. Честно =)
+                          </p>
+                          <form class="subscribeForm" action="#"name="subscribeForm" method="post" enctype="multipart/form-data">
+                              <input class="inputText" type="email" placeholder="Электронная почта">
+                              <span class="fakePlaceholder none">Электронная почта</span>
+                              <button class="btn btnPrimary btnMedium" type="submit">Отправить</button>
+                          </form>
+                      </div>
                   </div>
               </section>
 
-              <section class="mapBlock">
-                  <img class="mapImg" src="img/map.jpg" alt="Мap" width="1200" height="430">
+              <section class="mapBlock clearfix">
+                  <img class="mapImg" src="img/map.png" alt="Мap" width="1200" height="430">
                   <div class="adressBlock">
-                      <p>
-                          Адрес главного офиса и<br>офлайн магазина:
-                          <strong>ул. Большая Конюшенная<br>19/8, Санкт-Петербург</strong>
-                      </p>
-                      <p>
-                          Для заказов по телефону:</span><br>
-                          <strong><a href="tel:88124502525">8&#32;812&#32;450-25-25</a></strong><br>
-                          <span>(с 10 до 20 ежедневно)</span>
-                      </p>
+                      <div class="adressContainer">
+                          <p>
+                              Адрес главного офиса и<br>офлайн магазина:
+                          </p>
+                          <p class="adressGeneral">
+                              <strong>ул. Большая Конюшенная<br>19/8, Санкт-Петербург</strong>
+                          </p>
+                          <p class="adressPhone">
+                              <span>Для заказов по телефону:</span><br>
+                              <strong><a href="tel:88124502525">8&nbsp;812&nbsp;450-25-25</a></strong><br>
+                              <span>(с 10 до 20 ежедневно)</span>
+                          </p>
+                          </div>
                       <button class="btn btnPrimary btnMedium">Форма обратной связи</button>
-                  </div>
-                  <div class="popupForm hide"><!--<div class="popupForm visible">--><!--проставил классы у инпутов; форма изначально скрыта, при нажатии на кнопку - открывается-->
-                      <form action="#" class="popupForm feedbackForm" name="feedbackForm" method="post" enctype="multipart/form-data">
-                          <b>Мы обязательно вам ответим!</b>
-                          <a href="#">&#128937;</a>
-                          <input class="inputText" type="text" placeholder="Как вас зовут?">
-                          <span class="feedbackForm fakePlaceholder">Как вас зовут?</span>
-                          <input class="inputText" type="email" placeholder="Ваша почта для ответа?">
-                          <span class="feedbackForm fakePlaceholder">Ваша почта для ответа?</span>
-                          <textarea class="inputArea" name="feedback" id="feedbackText" cols="30" rows="5"></textarea>
-                          <input type="submit" class="actionLink" value="Отправить">
-                      </form>
                   </div>
               </section>
           </div>
@@ -288,22 +294,22 @@
                   <ul class="socialMenu">
                       <li class="socialItem">
                           <a href="https://twitter.com">
-                              <img src="img/twitter.png" alt="twitter" width="40" height="40">
+                              <img src="img/twitter.svg" alt="twitter" width="40" height="40">
                           </a>
                       </li>
                       <li class="socialItem">
                           <a href="https://www.instagram.com">
-                              <img src="img/instagram.png" alt="instagram" width="40" height="40">
+                              <img src="img/instagram.svg" alt="instagram" width="40" height="40">
                           </a>
                       </li>
                       <li class="socialItem">
                           <a href="https://www.facebook.com">
-                              <img src="img/facebook.jpg" alt="facebook" width="40" height="40">
+                              <img src="img/facebook.svg" alt="facebook" width="40" height="40">
                           </a>
                       </li>
                       <li class="socialItem">
                           <a href="https://vk.com">
-                              <img src="img/vkontakte.jpg" alt="vkontakte" width="40" height="40">
+                              <img src="img/vkontakte.svg" alt="vkontakte" width="40" height="40">
                           </a>
                       </li>
                   </ul>
@@ -324,6 +330,21 @@
               </div>
           </div>
       </footer>
+      <div class="popupForm none">
+          <form action="#" class="popupFeedbackForm" name="feedbackForm" method="post" enctype="multipart/form-data">
+              <b>Мы обязательно вам ответим!</b>
+              <a class="closeIco" href="index.html"></a>
+              <span class="fakePlaceholder fakeName">Как вас зовут?</span>
+              <input class="inputText" type="text" placeholder="Как вас зовут?">
+              <span class="fakePlaceholder fakeEmail">Ваша почта для ответа?</span>
+              <input class="inputText" type="email" placeholder="Ваша почта для ответа?">
+              <span class="fakePlaceholder fakeFeedBack">Напишите что-нибудь...</span>
+              <textarea class="inputArea" name="feedback" id="feedbackText" cols="51" rows="7" placeholder="Напишите что-нибудь..."></textarea>
+              <button type="submit" class="btn btnPrimary btnMedium">Отправить</button>
+          </form>
+      </div>
+      <div class="backPopup none"></div><!--подложка попапа-->
+  </div>
   <script src="js/main.js"></script>
   </body>
 </html>
