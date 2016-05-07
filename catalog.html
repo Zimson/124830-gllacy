@@ -3,123 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <title>Глейси: каталог</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,900,900italic,700,500&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="default">
-<header class="pageHeader">
-        <div class="container">
+<body>
+    <div class="siteWrapper backDefault">
+        <header class="pageHeader">
+            <div class="container">
 
-            <a href="index.html"><img class="logoImg" src="img/logo.jpg" alt="GllacyShop"  width="160" height="65"></a><!--обернул картинку в ссылку по заданию, на главную-->
-            <nav class="pageHeaderMenu">
-                <ul class="pageHeaderList">
-                    <li class="item dropdown">
-                        <a class="itemLink dropdownToggle" href="catalog.html">
-                            Каталог
-                        </a>
-                        <ul class="dropdownMenu">
-                            <li class="dropdownMenuItem">
-                                <a class="dropdownMenuLink" href="#"></a>Новинки
-                            </li>
-                            <li class="dropdownMenuItem">
-                                <a class="dropdownMenuLink" href="#">
-                                    Сливочное
-                                </a>
-                            </li>
-                            <li class="dropdownMenuItem">
-                                <a class="dropdownMenuLink" href="#">
-                                    Щербеты
-                                </a>
-                            </li>
-                            <li class="dropdownMenuItem">
-                                <a class="dropdownMenuLink" href="#">
-                                    Фруктовый лёд
-                                </a>
-                            </li>
-                            <li class="dropdownMenuItem">
-                                <a class="dropdownMenuLink" href="#">
-                                    Мелорин
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="item">
-                        <a class="itemLink" href="#">
-                            Доставка и оплата
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a class="itemLink" href="#">
-                            О компании
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-
-            <div class="searchBlock"><!--searchBlock open--> <!--у элементов с ховером добавил комментарии со вторым классом open-->
-                <a class="btn btnDefault btnSmall" href="#">
-                    <span class="searchImg"></span>
+                <a href="index.html">
+                    <img class="logoImg" src="img/logo.svg" alt="GllacyShop"  width="160" height="65">
                 </a>
-                <form class="searchForm" action="#" name="searchForm" method="post" enctype="multipart/form-data">
-                    <input class="searchInput" type="text" placeholder="Что ищём?">
-                </form>
-            </div>
+                <nav class="pageHeaderMenu">
 
-            <div class="user"><!-- <div class="user open"> -->
-                <div class="userEnter">
-                    <a class="btn btnDefault btnSmall" href="#"><!--добавил класс fullBasket для полной корзины-->
-                        <i class="ico icoEnter"></i>
-                        ВХОД
+                    <ul class="pageHeaderList">
+                        <li class="item dropdown current">
+                            <a class="itemLink dropdownToggle" href="catalog.html">
+                                <span class="dropdownTitle">Каталог</span>
+                            </a>
+                            <ul class="dropdownMenu none">
+                                <li class="dropdownMenuItem">
+                                    <a href="dropdownMenuLink">
+                                        Новинки
+                                    </a>
+                                </li>
+                                <li class="dropdownMenuItem current">
+                                    <span class="dropdownMenuLink active">Сливочное</span>
+                                </li>
+                                <li class="dropdownMenuItem">
+                                    <a class="dropdownMenuLink" href="#">
+                                        Щербеты
+                                    </a>
+                                </li>
+                                <li class="dropdownMenuItem">
+                                    <a class="dropdownMenuLink" href="#">
+                                        Фруктовый лёд
+                                    </a>
+                                </li>
+                                <li class="dropdownMenuItem">
+                                    <a class="dropdownMenuLink" href="#">
+                                        Мелорин
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="item">
+                            <a class="itemLink" href="#">
+                                Доставка и оплата
+                            </a>
+                        </li>
+                        <li class="item">
+                            <a class="itemLink" href="#">
+                                О Компании
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="searchBlock">
+                    <a class="searchLink btn btnDefault btnSmall" href="#">
+                        <span class="searchImg"></span><!--поменял img на span под картинку фоном-->
                     </a>
-                    <form class="userForm" action="#" name="userForm" method="post" enctype="multipart/form-data">
-                        <input class="inputText" type="email" placeholder="Электронная почта">
-                        <span class="fakePlaceholder">Электронная почта</span>
-                        <input class="inputText" type="password" placeholder="Пароль">
-                        <span class="fakePlaceholder">Пароль</span>
-                        <button class="btn btnPrimary btnMedium" type="submit">Войти</button>
-                        <a class="userLink" href="#">
-                            Забыли пароль?
-                        </a>
-                        <a class="userLink" href="#">
-                            Новая регистрация
-                        </a>
+                    <form class="searchForm none" action="#" name="searchForm" method="post" enctype="multipart/form-data">
+                        <input class="inputText" type="text" placeholder="Что ищём?">
                     </form>
                 </div>
-                <div class="userBasket">
-                    <a class="btn btnDefault btnSmall fullBasket" href="">
-                        <i class="ico icoBasket"></i>
-                        Пусто
-                    </a>
-                    <form class="basketForm hide" action="#" name="basket" method="post" enctype="multipart/form-data"><!--при нажатии на корзину будет  добавляться к форме класс visible-->
-                        <ul class="purchaseMenu">
-                            <li class="purchaseItem">
-                                <a class="purchaseClose" href="#">&#128937;</a>
-                                <img class="purchaseImg" src="" alt="">
-                                <span class="purchaseTitle">Пломбир с апельсиновым джемом</span>
-                                <span class="purchaseCost">1,5 x <b>200 руб</b></span>
-                                <span class="purchaseSum">300</span>
-                            </li>
-                        </ul>
-                        <div class="basketSum">
-                            <strong>Итого:</strong><strong>750 руб</strong>
-                        </div>
-                        <button class="btn btnPrimary btnMedium" type="submit">Оформить заказ</button>
-                    </form>
+
+                <div class="user">
+                    <div class="userEnter">
+                        <a class="enterLink btn btnDefault btnSmall" href="">
+                            <i class="icoEnter"></i>
+                            <span class="enterTitle">Вход</span>
+                        </a>
+                        <form class="userForm none" action="#" name="userForm" method="post" enctype="multipart/form-data" hidden>
+                            <input class="inputText" type="email" placeholder="Электронная почта">
+                            <span class="fakePlaceholder fakeEmail none">Электронная почта</span>
+                            <input class="inputText" type="password" placeholder="Пароль">
+                            <span class="fakePlaceholder fakePassword none">Пароль</span>
+                            <button class="btn btnPrimary btnMedium" type="submit">Войти</button>
+                            <div class="helpInfo">
+                                <a class="userLink" href="#">
+                                    Забыли пароль?
+                                </a>
+                                <a class="userLink" href="#">
+                                    Новая регистрация
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="userBasket fullBasket">
+                        <a class="btn btnDefault btnSmall" href="#">
+                            <i class="ico icoFullBasket"></i>
+                            <span class="enterBasket">2 товара</span>
+                        </a>
+                        <form class="basketForm none" action="#" name="basket" method="post" enctype="multipart/form-data">
+                            <ul class="purchaseMenu">
+                                <li class="purchaseItem">
+                                    <a class="purchaseClose closeIco" href="#"></a>
+                                    <img class="purchaseImg" src="img/orangeice.png" width="32" height="32" alt="Пломбир с апельсиновым джемом">
+                                    <span class="purchaseTitle">Пломбир с апельсиновым джемом</span>
+                                    <span class="purchaseCost">1,5 кг x <b>200 руб</b></span>
+                                    <span class="purchaseSum">300 руб</span>
+                                </li>
+                                <li class="purchaseItem">
+                                    <a class="purchaseClose closeIco" href="#"></a>
+                                    <img class="purchaseImg" src="img/strawberryice.png" width="32" height="32" alt="Клубничный пломбир с присыпкой  из белого шоколада">
+                                    <span class="purchaseTitle">Клубничный пломбир с присыпкой  из белого шоколада</span>
+                                    <span class="purchaseCost">1,5 кг x <b>300 руб</b></span>
+                                    <span class="purchaseSum">450 руб</span>
+                                </li>
+                            </ul>
+                            <hr>
+                            <div class="basketSum">
+                                <strong>Итого:</strong><strong>750 руб</strong>
+                            </div>
+                            <button class="btn btnPrimary btnMedium" type="submit">Оформить заказ</button>
+                        </form>
+                    </div>
+                    <span class="userTime">C 10 до 20, ежедневно</span>
+                    <a class="userPhone" href="tel:88124502525">8&nbsp;812&nbsp;450-25-25</a>
                 </div>
-                <span class="userTime">C 10 до 20, ежедневно</span>
-                <a class="userPhone" href="tel:88124502525">8&#32;812&#32;450-25-25</a>
+                <nav class="breadcrumbs">
+                    <ul class="breadcrumbsMenu">
+                        <li class="breadcrumbsMenuItem">
+                            <a href="">Главная</a>
+                            <span class="divider">&#187;</span>
+                        </li>
+                        <li class="breadcrumbsMenuItem">
+                            <a href="">Каталог</a>
+                            <span class="divider">&#187;</span>
+                        </li>
+                        <li class="breadcrumbsMenuItem active">
+                            <span>Сливочное</span>
+                        </li>
+                    </ul>
+                </nav>
             </div>
+        </header>
+    </div>
+</body>
+</html>
 
-            <nav class="breadcrumbs">
-                <ul>
-                    <li><a href="">Главная</a><span class="divider">&#187;</span></li>
-                    <li><a href="">Каталог</a><span class="divider">&#187;</span></li>
-                    <li class="active"><span>Сливочное</span></li>
-                </ul>
-            </nav>
 
-        </div>
-    </header>
+
+
+
+
+
+
+
+
+
     <div class="mainContent">
         <div class="container">
 
@@ -434,5 +469,3 @@
         </div>
     </footer>
     <script src="js/main.js"></script>
-</body>
-</html>

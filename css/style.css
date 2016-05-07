@@ -43,18 +43,6 @@ body {
     display: block;
 }
 
-.backDefault {
-    background-color: #87a193;
-}
-
-.backSecondSlide {
-    background-color: #8a97a7;
-}
-
-.backThirdSlide {
-    background-color: #a29089;
-}
-
 /*заголовки из домашнего задания*/
 h1,
 .h1 {
@@ -96,6 +84,10 @@ h3,
 
 .container {
     margin: 0 2.3%;
+}
+
+.container.backDefault {
+    background-color: #87a193;
 }
 
 /*кнопочки и общие элементы*/
@@ -249,7 +241,9 @@ li.item:last-child {
 }
 
 /*блок выпадающего меню*/
-.dropdown:hover {
+.dropdown:hover,
+.dropdown.current,
+.dropdown.current:hover {
     display: inline;
     margin-right: 14px;
     float: left;
@@ -257,7 +251,9 @@ li.item:last-child {
     margin-top: -5px;
 }
 
-.dropdown:hover .dropdownToggle {
+.dropdown:hover .dropdownToggle,
+.dropdown.current .dropdownToggle,
+.dropdown.current:hover .dropdownToggle {
     display: block;
     width: 87px;
     min-height: 32px;
@@ -267,6 +263,17 @@ li.item:last-child {
     color: #323232;
     text-align: center;
 }
+
+.dropdown.current .dropdownToggle {
+    background-color: #d07058;
+    color: #ffffff;
+    padding-top: 7px;
+}
+
+.dropdown.current:hover .dropdownToggle {
+    padding-top: 0;
+}
+
 
 .dropdownToggle:active {
     background-color: #ededed;
@@ -291,7 +298,8 @@ li.item:last-child {
 }
 
 .dropdownMenuItem a,
-.dropdownMenuItem:first-child {
+.dropdownMenuItem:first-child,
+.dropdownMenuLink.active{
     margin-left: 20px;
     font-size: 14px;
     line-height: 1.143;
@@ -300,8 +308,13 @@ li.item:last-child {
     text-decoration: none;
 }
 
-.dropdownMenuItem a {
+.dropdownMenuItem a,
+.dropdownMenuLink.active {
     font-weight: normal;
+}
+
+.dropdownMenuLink.active {
+    color: #ffffff;
 }
 
 .dropdownMenuItem:first-child {
@@ -325,6 +338,13 @@ li.item:last-child {
     margin-top: 0;*/
     margin-bottom: 3px;
 }
+
+.dropdownMenuItem.current,
+.dropdownMenuItem.current:hover {
+    background-color: #d07058;
+}
+
+
 
 .dropdownMenuItem:hover {
     background-color: #fbded7;
@@ -435,22 +455,142 @@ li.item:last-child {
 
 .icoEnter {
     display: block;
-    width: 20px;
-    height: 19px;
+    width: 21px;
+    height: 20px;
     float: left;
     margin-left: 18px;
     margin-top: 6px;
     background: url(../img/spritesIco.png) no-repeat -88px -10px;
 }
 
-.icoEmptyBasket {
+.ico {
     display: block;
     width: 21px;
     height: 20px;
     float: left;
     margin-left: 15px;
     margin-top: 6px;
+}
+
+.icoEmptyBasket {
     background: url(../img/spritesIco.png) no-repeat -47px -10px;
+}
+
+.icoFullBasket {
+    background: url(../img/spritesIco.png) no-repeat -257px -10px;
+}
+
+.fullBasket a {
+    background-color: rgba(248, 247, 244, 1);
+}
+
+.fullBasket span{
+    color: #323232;
+    margin-right: 10px;
+}
+
+/*полная корзина*/
+.fullBasket:hover .basketForm {
+    position: absolute;
+    display: block;
+}
+
+.basketForm {
+    top: 60px;
+    left: -318px;
+    width: 540px;
+    min-height: 242px;
+    background-color: #f8f7f4;
+    border-radius: 5px;
+}
+
+.purchaseMenu {
+    width: 500px;
+    min-height: 107px;
+    margin: 0 auto;
+    margin-top: 23px;
+}
+
+.purchaseItem {
+    position: relative;
+    min-height: 52px;
+    font-size: 13px;
+    line-height: 1.231;
+    font-weight: lighter;
+    color: #323232;
+}
+
+.purchaseClose.closeIco {
+    position: absolute;
+    display: block;
+    left: -10px;
+    top: 4px;
+    width: 17px;
+    height: 17px;
+    background-image: url('../img/spritesIco.png');
+    background-repeat: no-repeat;
+    background-position: -2px -3px;
+    background-size: 345px auto;
+}
+
+.purchaseImg {
+    margin-top: -2px;
+    margin-left: 21px;
+}
+
+.purchaseTitle {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 10px;
+    margin-top: 6px;
+    width: 225px;
+}
+
+.purchaseCost {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 13px;
+    margin-left: 8px;
+    margin-top: 6px;
+}
+
+.purchaseItem b {
+    color: #999999;
+}
+
+span.purchaseSum {
+    display: inline-block;
+    vertical-align: top;
+    float: right;
+    width: 60px;
+    margin-top: 6px;
+    margin-right: 4px;
+}
+
+hr {
+    width: 510px;
+    height: 1px;
+    margin-left: 15px;
+    border: none;
+    background-color: #cacac7;
+}
+
+.basketSum {
+    float: right;
+    margin-top: 14px;
+    margin-right: 22px;
+    font-size: 15px;
+    line-height: 1.2;
+    font-weight: 900;
+    color: #333333;
+}
+
+.basketForm .btnPrimary {
+    position: absolute;
+    width: 172px;
+    bottom: 20px;
+    right: 15px;
+    padding-bottom: 10px;
 }
 
 .enterBasket {
@@ -545,6 +685,32 @@ a.btnDefault:hover .icoEmptyBasket {
     line-height: 1.091;
     color: #ffffff;
     text-decoration: none;
+}
+
+/*хлебные крошки*/
+.breadcrumbs {
+    position: absolute;
+    width: 350px;
+    min-height: 18px;
+    bottom: 0;
+    left: 27px;
+}
+
+.breadcrumbsMenuItem {
+    display: inline;
+    width: 80px;
+    margin-right: 3px;
+}
+
+.breadcrumbsMenuItem a, .breadcrumbsMenuItem span {
+    font-size: 14px;
+    line-height: 1.143;
+    color: #ffffff;
+    font-weight: lighter;
+}
+
+.divider {
+    margin-left: 4px;
 }
 
 /*слайдер*/
@@ -665,6 +831,10 @@ body > input[type="radio"] {
 
 .siteWrapper:after {
     background-image: url("../img/icecream2.png");
+}
+
+.siteWrapper.backDefault {
+    background-color: #87a193;
 }
 
 .mainContent:after {
@@ -817,6 +987,11 @@ body > input[type="radio"] {
     width: 267px;
     height: 267px;
     border-radius: 50%;
+}
+
+.productList a:hover,
+footer a:hover {
+    color: #ffbc9e;
 }
 
 
@@ -993,6 +1168,10 @@ p.thermIco::before {
     font-size: 24px;
     line-height: 1.25;
     color: #323232;
+}
+
+.newsBlockLeft a:hover {
+    color: #e84d37;
 }
 
 .newsBlockRight {
@@ -1177,6 +1356,141 @@ p.adressGeneral {
     background: url('../img/spritesIco.png') no-repeat -10px -10px;
 }
 
+/*футер*/
+.pageFooter {
+    position: relative;
+    min-height: 100px;
+}
+
+.pageFooterSocial,
+.socialMenu,
+.pageFooterDev {
+    width: 267px;
+    float: left;
+    margin-top: 15px;
+}
+
+/*социалки*/
+ul.socialMenu li {
+    display: inline-block;
+    vertical-align: middle;
+    width: 39px;
+    height: 39px;
+    margin-right: 6px;
+    border: 4px solid;
+    border-color: rgba(255,255,255,0.5);
+    border-radius: 50%;
+}
+
+.socialItem a {
+    vertical-align: baseline;
+    display: block;
+    width: 31px;
+    height: 31px;
+    opacity: 0.8;
+    border-radius: 50%;
+}
+
+.socialItem:hover {
+    border-color: rgba(255, 255, 255, 0.71);
+}
+
+.socialItem:hover a {
+    opacity: 1;
+}
+
+.linkTwitter {
+    background: url('../img/twitter.svg') no-repeat;
+}
+
+.linkInstagram {
+    background: url('../img/spritesIco.png') no-repeat -410px -10px;
+}
+
+.linkFacebook {
+    background: url('../img/spritesIco.png') no-repeat -206px -10px;
+}
+
+.linkVkontakte {
+    background: url('../img/spritesIco.png') no-repeat -489px -10px;
+}
+
+.linkTwitter:active,
+.linkInstagram:active,
+.linkFacebook:active,
+.linkVkontakte:active {
+    box-shadow: inset 0 1px 2px #888888;
+}
+
+/*поставщики*/
+.pageFooterNav, .pageFooterNav ul {
+    width: 419px;
+    min-height: 70px;
+    padding-top: 13px;
+}
+
+.pageFooterNav {
+    margin-left: 265px;
+}
+
+.pageFooterMenu {
+    margin-left: 157px;
+}
+
+.footerMenuItem {
+    display: inline-block;
+    width: 142px;
+    height: 21px;
+    float: left;
+}
+
+.footerMenuItem a {
+    font-size: 13px;
+    line-height: 1.385;
+    color: #ffffff;
+    font-weight: lighter;
+}
+
+a.heartIco {
+    font-weight: bolder;
+}
+
+.footerMenuItem:last-child {
+    width: 162px;
+}
+
+.heartIco:before {
+    content: '';
+    display: block;
+    float: left;
+    background-image: url('../img/spritesIco.png');
+    background-repeat: no-repeat;
+    background-position: -375px -10px;
+    width: 15px;
+    height: 13px;
+    margin-top: 5px;
+    margin-left: -22px;
+}
+
+/*меню  хтмл-академии*/
+.pageFooterDev {
+    float: right;
+    margin-top: -70px;
+    margin-right: -80px;
+}
+
+.subLogo {
+    text-decoration: none;
+}
+
+.pageFooterDev,
+.subContacts {
+    font-size: 12px;
+    line-height: 1.5;
+    font-weight: lighter;
+    color: #ffffff;
+}
+
 
 /*спрайты*/ /*УДАЛИТЬ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 .sprite {
@@ -1257,14 +1571,8 @@ p.adressGeneral {
     background-position: -461px -10px;
 }
 
-.sprite-tw {
-    width: 31px;
-    height: 31px;
-    background-position: -489px -10px;
-}
-
 .sprite-vk {
     width: 31px;
     height: 31px;
-    background-position: -540px -10px;
+    background-position: -489px -10px;
 }
