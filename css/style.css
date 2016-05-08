@@ -24,6 +24,11 @@ button {
     border: 0;
 }
 
+.button:active,
+.button:focus {
+    outline: none;
+}
+
 body {
     width: 1200px;
     margin: 0 auto;
@@ -115,6 +120,7 @@ h3,
     display: block;
     width:189px;
     height: 45px;
+    background: -webkit-linear-gradient(top, #f26743, #e74b36);
     background: linear-gradient(to bottom, #f26743, #e74b36);
     border-radius: 25px;
     box-shadow: 0 2px 2px rgba(172, 16, 0, 0.64);
@@ -126,17 +132,20 @@ h3,
 }
 
 .btnMedium {
+    background: -webkit-linear-gradient(top, #f06643, #cb3a26);
     background: linear-gradient(to bottom, #f06643, #cb3a26);
     box-shadow: 0 2px 2px rgba(85, 8, 0, 0.54);
 }
 
 .btnMedium:hover {
+    background: -webkit-linear-gradient(top, #f58669, #ec6f5e);
     background: linear-gradient(to bottom, #f58669, #ec6f5e);
     box-shadow: 0 1px 2px #ac1000;
     cursor: pointer;
 }
 
 .btnMedium:active {
+    background: -webkit-linear-gradient(top, #d74632, #e1613e);
     background: linear-gradient(to bottom, #d74632, #e1613e);
     box-shadow: inset 0 2px 2px #942718;
 }
@@ -287,9 +296,8 @@ li.item:last-child {
     margin-top: 7px;
 }
 
-.dropdown:hover .dropdownMenu {
+.dropdownMenu {
     position: absolute;
-    display: block;
     width: 143px;
     min-height: 171px;
     top: 33px;
@@ -297,6 +305,17 @@ li.item:last-child {
     background-color: #f8f7f4;
     border-radius: 5px;
     z-index: 1;
+}
+
+.dropdownMenu,
+.searchForm,
+.userForm,
+.basketForm {
+    box-shadow: 0 20px 20px rgba(0,0,0,0.4);
+}
+
+.dropdown:hover .dropdownMenu {
+    display: block;
 }
 
 .dropdownMenuItem a,
@@ -385,15 +404,18 @@ li.item:last-child {
     background: url(../img/spritesIco.png) no-repeat -162px -2px;
 }
 
-.searchLink:hover + .searchForm {
+.searchForm {
     position: absolute;
-    display: block;
     width: 341px;
     min-height: 84px;
     left: -309px;
     top: 37px;
     background-color: #f8f7f4;
     border-radius: 5px;
+}
+
+.searchLink:hover + .searchForm {
+    display: block;
 }
 
 .searchLink:hover .searchImg {
@@ -601,15 +623,18 @@ hr {
     margin-right: 26px;
 }
 
-.enterLink:hover + .userForm {
+.userForm {
     position: absolute;
-    display: block;
     width: 277px;
     min-height: 214px;
     left: -181px;
     top: 60px;
     background-color: #f8f7f4;
     border-radius: 5px;
+}
+
+.enterLink:hover + .userForm {
+    display: block;
 }
 
 .userForm .inputText {
@@ -798,11 +823,13 @@ a.btnDefault:hover .icoEmptyBasket {
 }
 
 .btnLarge:hover {
+    background: -webkit-linear-gradient(top, #f58569, #ec6f5e);
     background: linear-gradient(to bottom, #f58569, #ec6f5e);
     box-shadow: 0 2px 2px #ac1000;
 }
 
 .btnLarge:active {
+    background: -webkit-linear-gradient(top, #d84732, #e1613e);
     background: linear-gradient(to bottom, #d84732, #e1613e);
     box-shadow: inset 0 2px 2px #942718;
 }
@@ -816,6 +843,7 @@ body > input[type="radio"] {
     min-width: 1080px;
     background-repeat: no-repeat;
     background-position: top center;
+    -webkit-transition: background-image 0.5s ease, background-color 0.5s ease;
     transition: background-image 0.5s ease, background-color 0.5s ease;
 }
 
@@ -997,6 +1025,10 @@ footer a:hover,
     color: #ffbc9e;
 }
 
+a.btnPrimary:hover {
+    color: #ffffff;
+}
+
 
 article.productItem {
     position: relative;
@@ -1004,7 +1036,7 @@ article.productItem {
     vertical-align: baseline;
     width: 267px;
     float: left;
-    margin-right: 26px;
+    margin-right: 26.5px;
 }
 
 article.productItem:nth-child(4n) {
@@ -1012,7 +1044,7 @@ article.productItem:nth-child(4n) {
 }
 
 img.productItemImg {
-    margin-top: 40px;
+    margin-top: 28px;
     border-radius: 50%;
 }
 
@@ -1041,7 +1073,7 @@ img.productItemImg {
 }
 
 .productPrice {
-    top: 248px;
+    top: 237px;
     left: -1px;
     font-size: 45px;
     line-height: 1;
@@ -1052,13 +1084,13 @@ img.productItemImg {
     vertical-align: baseline;
     width: 32px;
     height: 36px;
-    top: 255px;
+    top: 243px;
     left: 80px;
     background: url(../img/ruble.svg) no-repeat center;
 }
 
 .productWeight {
-    top: 253px;
+    top: 241px;
     left: 112px;
 }
 
@@ -1232,12 +1264,12 @@ p.thermIco::before {
     color: #323232;
 }
 
-.adressBlock button {
+.adressBlock .btnPrimary {
     width: 250px;
     margin-top: 24px;
     margin-left: 27px;
     border: 0;
-    padding-top: 0;
+    padding-top: 11px;
 }
 
 .adressContainer {
@@ -1505,27 +1537,28 @@ h1.catalogPage {
 
 /*форма*/
 .filterBlock {
-    min-height: 180px;
-    margin-bottom: -43px;
+    min-height: 170px;
+    margin-bottom: -26px;
+    margin-top: 27px;
 }
 
 /*товары каталога*/
 .productList.catalogPage {
     position: relative;
     min-height: 365px;
-    margin-bottom: 137px;
+    margin-bottom: 127px;
 }
 
 .productItem.catalogPage {
     position: relative;
-    margin-bottom: -1px;
+    margin-bottom: 11px;
 }
 
 .catalogPage .btnMedium {
     position: absolute;
     display: none;
     width: 202px;
-    top: 372px;
+    top: 361px;
     left: 32px;
     padding-top: 10px;
     z-index: 5;
@@ -1535,7 +1568,7 @@ h1.catalogPage {
     position: absolute;
     width: 278px;
     min-height: 405px;
-    top: 34px;
+    top: 22px;
     left: -5px;
     background-color: rgba(255, 255, 255, 0.4);
     border-radius: 5px;
@@ -1567,22 +1600,22 @@ h1.catalogPage {
 
 .productItem.catalogPage:hover .productItemImg {
     position: absolute;
-    margin-top: 40px;
+    margin-top: 27px;
     z-index: 2;
 }
 
 .productItem.catalogPage:hover .productPrice {
-    top: 248px;
+    top: 237px;
     z-index: 2;
 }
 
 .productItem.catalogPage:hover .productRubleIco {
-    top: 255px;
+    top: 243px;
     z-index: 2;
 }
 
 .productItem.catalogPage:hover .productWeight {
-    top: 253px;
+    top: 242px;
     z-index: 2;
 }
 
@@ -1591,14 +1624,14 @@ h1.catalogPage {
     display: inline-block;
     vertical-align: top;
     width: 258px;
-    top: 313px;
+    top: 301px;
     left: 4px;
     z-index: 2;
 }
 
 .productItem.catalogPage:hover ~ .btnMedium {
     top: 343px;
-    left: 34px;
+    left: 31px;
 }
 
 hr.bigHR {
@@ -1615,15 +1648,420 @@ hr.bigHR {
 /*пагинация*/
 .pagination {
     position: absolute;
-    bottom: -111px;
-    right: -27px;
+    width: 211px;
+    height: 30px;
+    bottom: -101px;
+    right: -21px;
     color: #ffffff;
     font-size: 16px;
-    text-decoration: none;
 }
 
-.pagination li {
+.paginItem:first-child {
+    width: 13px;
+    margin-right: 14px;
+}
+
+.paginItem {
     display: inline-block;
-    width: 27px;
-    height: 27px;
+    vertical-align: top;
+    width: 26px;
+    height: 26px;
+    margin-right: 2px;
+    float: left;
+    border-radius: 50%;
+}
+
+.paginItem span,
+.paginItem a {
+    display: block;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 1.125;
+    text-decoration: none;
+    padding-left: 7px;
+    margin-top: 4px;
+}
+
+.disabled {
+    background-color: #ffffff;
+    margin-bottom: 2px;
+    margin-right: 6px;
+    margin-left: -3px;
+}
+
+.disabled span,
+.disabled a {
+    display: block;
+    color: #323232;
+    padding-left: 9px;
+    margin-top: 3px;
+}
+
+.paginItem:last-child {
+    margin-left: 5px;
+}
+
+.rightArrow,
+.leftArrow {
+    display: block;
+    background-image: url('../img/spritesIco.png');
+    background-repeat: no-repeat;
+    background-position: -461px -10px;
+    width: 8px;
+    height: 14px;
+    margin-top: 3px;
+    margin-left: 2px;
+}
+
+.leftArrow {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    opacity: 0.2;
+}
+
+.leftArrow.disabled,
+.rightArrow.disabled {
+    background-color: inherit;
+}
+
+.paginItem:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+
+.paginItem:hover span,
+.paginItem:hover a {
+    color: #ffffff;
+}
+
+.paginItem:last-child:hover,
+.paginItem:first-child:hover {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.paginItem.disabled:hover {
+    background-color: #ffffff;
+    cursor: default;
+}
+
+.paginItem.disabled:hover span,
+.paginItem.disabled:hover a {
+    color: #323232;
+}
+
+.paginItem:active {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.paginItem:first-child:active,
+.paginItem:last-child:active {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.paginItem:active span,
+.paginItem:active a,
+.paginItem:first-child:active span,
+.paginItem:first-child:active a,
+.paginItem:last-child:active span,
+.paginItem:last-child:active a {
+    color: #323232;
+}
+
+/*блок фильтров из каталога*/
+.filterForm {
+    width: 880px;
+    min-height: 140px;
+}
+
+.filterGroup {
+    width: 180px;
+    height: 70px;
+    float: left;
+}
+
+.filterForm fieldset {
+    border: none;
+}
+
+.filterGroupContent {
+    position: relative;
+    height: 36px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+}
+
+/*сортировка*/
+.sortItem {
+    width: 193px;
+}
+
+.filterForm legend {
+    padding-left: 4px;
+    font-size: 14px;
+    line-height: 1.143;
+}
+
+.groupContentSort {
+    position: relative;
+    width: 193px;
+    height: 36px;
+    margin-left: -12px;
+    padding-left: 14px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 0.01px;
+    text-overflow: '';
+    -ms-appearance: none;
+    background-image: url(../img/markDownWhite.png);
+    background-position: 169px center;
+    background-repeat: no-repeat;
+}
+
+.groupContentSort::-ms-expand {
+    display: none;
+}
+
+.groupContentSort:hover {
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 1);
+    color: #323232;
+    cursor: pointer;
+    background-image: url(../img/markDownBlack.png);
+}
+
+.groupContentSort:active {
+    border-color: transparent;
+}
+
+.groupContentSort:focus {
+    outline: none;
+}
+
+/*диапазон цен - лекционная реализация*/
+.rangeItem {
+    margin-left: -6px;
+}
+
+.rangeItem .filterGroupContent {
+    position: relative;
+    width: 216px;
+    height: 36px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+}
+
+.rangeItem legend {
+    padding-left: 14px;
+}
+
+.range-controls {
+    position: absolute;
+    margin-top: 17px;
+}
+
+.range-controls .scale {
+    width: 188px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    margin-left: 15px;
+}
+
+.range-controls .bar {
+    width: 118px;
+    height: 4px;
+    background: #ffffff;
+    margin-left: 19px;
+}
+
+.range-toggle {
+    position: absolute;
+    top: -9px;
+    width: 20px;
+    height: 20px;
+    border: 10px solid #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 2px 1px 0 rgba(0, 1, 1, 0.2);
+    cursor: pointer;
+}
+
+.range-toggle-min {
+    left: 34px;
+}
+
+.range-toggle-max {
+    left: 132px;
+}
+
+/*выбор жирности*/
+.fatnessItem .filterGroupContent {
+    width: 414px;
+    margin-left: -7px;
+}
+
+.fatnessItem legend {
+    padding-left: 8px;
+}
+
+.radioItem {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    margin-right: 9.5px;
+    float: left;
+}
+
+.radio {
+    display: inline-block;
+    vertical-align: sub;
+    padding-top: 8px;
+    margin-left: 16px;
+}
+
+.radioItem:hover,
+.radio:hover .radioItem {
+    cursor: pointer;
+    border: 2px solid #ffffff;
+
+}
+
+.radio:hover {
+    cursor: pointer;
+}
+
+.radioItem:hover .innerRadio,
+.radio:hover .innerRadio {
+    margin-top: 3px;
+    margin-left: 3px;
+}
+
+.innerRadio {
+    width: 10px;
+    height: 10px;
+    margin-top: 4px;
+    margin-left: 4px;
+    background-color: #ffffff;
+    border-radius: 50%;
+}
+
+/*тройная вложенность из-за сложной формы*/
+input[type="radio"]:checked + .radio span {
+    display: block;
+}
+
+input[type="radio"]:disabled + .radio,
+input[type="radio"]:disabled + .radio > span {
+    opacity: 0.4;
+    cursor: default;
+}
+
+/*наполнители*/
+.fillerItem {
+    margin-top: 4px;
+    margin-left: -9px;
+}
+
+.fillerItem .filterGroupContent {
+    width: 702px;
+}
+
+.fillerItem legend {
+    padding-left: 14px;
+}
+
+.checkboxItem {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    margin-right: 14px;
+    float: left;
+}
+
+.checkbox {
+    display: inline-block;
+    vertical-align: sub;
+    padding-top: 8px;
+    margin-left: 15px;
+}
+
+.checkboxItem:hover,
+.checkbox:hover .checkboxItem {
+    cursor: pointer;
+    border: 2px solid #ffffff;
+
+}
+
+.checkbox:hover {
+    cursor: pointer;
+}
+
+.checkboxItem:hover .innerCheckbox,
+.checkbox:hover .innerCheckbox {
+    margin-top: 3px;
+    margin-left: 2px;
+}
+
+.innerCheckbox {
+    width: 12px;
+    height: 10px;
+    margin-top: 4px;
+    margin-left: 3px;
+    background-image: url(../img/whiteOk.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+input[type="checkbox"]:checked + .checkbox span {
+    display: block;
+}
+
+input[type="checkbox"]:disabled + .checkbox,
+input[type="checkbox"]:disabled + .checkbox > span {
+    opacity: 0.4;
+    cursor: default;
+}
+
+input[type="checkbox"]:disabled:hover + .checkbox .checkboxItem {
+    border: 1px solid #ffffff;
+    cursor: default;
+}
+
+input[type="checkbox"]:disabled + .checkbox:hover span{
+    margin-top: 4px;
+    margin-left: 3px;
+}
+
+/*кнопка применить*/
+.btnBordered {
+    width: 143px;
+    height: 34px;
+    float: right;
+    margin-right: 20px;
+    margin-top: 27px;
+    border: 2px solid #ffffff;
+}
+
+.btnBordered {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.btnBordered:hover {
+    background-color: #ffffff;
+}
+
+.btnBordered:hover {
+    color: #323232;
+    cursor: pointer;
+}
+
+.btnBordered:active {
+    box-shadow: inset 0 1px 2px #696969;
 }

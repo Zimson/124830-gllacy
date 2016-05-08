@@ -145,76 +145,101 @@
             <div class="container">
                 <h1 class="h2 catalogPage clearfix">Сливочное мороженое</h1>
                 <section class="filterBlock clearfix">
-                    <!--<form  class="filterForm" action="#" name="filterForm" method="post" enctype="multipart/form-data">
-                        <fieldset class="filterGroup">
-                            <legend>Сортировка:</legend>
-                            <div class="filterGroupContent disable">&lt;!&ndash;добавил к обёртке группы класс disable, при нажатии будет меняться на active&ndash;&gt;
-                                <div class="selectDropdown">
-                                    <span class="selectDropdownToggle">По популярности</span>&lt;!&ndash;хочу попробовать делать этот выбор скриптом = нажимаешь на это поле - выпадает div.selectHideList и в нём делаешь выбор&ndash;&gt;
-                                    <div class="selectHideList hide">
-                                        <ul class="selectDropdownMenu">
-                                            <li class="dropdownItem" data-value="по популярности">по популярности</li>
-                                            <li class="dropdownItem" data-value="сначала недорогие">сначала недорогие</li>
-                                            <li class="dropdownItem" data-value="сначала дорогие">сначала дорогие</li>
-                                            <li class="dropdownItem" data-value="по жирности">по жирности</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </fieldset>
-                        /*оставил изначальный блок в комментарии, в руководстве строгое замечание, чтобы весь блок фильтров верстался формами*/
-                        &lt;!&ndash;<fieldset class="filterGroup">
+                    <form  class="filterForm" action="filterform.html" name="filterForm" method="get" enctype="multipart/form-data">
+                        <fieldset class="filterGroup sortItem">
                         <legend>Сортировка:</legend>
-                            <div class="filterGroupContent disable">&lt;!&ndash;добавил к обёртке группы класс disable, при нажатии будет меняться на active&ndash;&gt;
-                                <legend>Сортировка:</legend>
-                                <select name="sort">
-                                    <option selected value="по популярности">по популярности</option>
-                                    <option value="по популярности">по популярности</option>
-                                    <option value="сначала недорогие">сначала недорогие</option>
-                                    <option value="сначала дорогие">сначала дорогие</option>
-                                    <option value="по жирности">по жирности</option>
-                                </select>
-                            </div>
-                        </fieldset>&ndash;&gt;
+                            <select class="groupContentSort" name="sort">
+                                <option value="по популярности" selected>по популярности</option>
+                                <option value="сначала недорогие">сначала недорогие</option>
+                                <option value="сначала дорогие">сначала дорогие</option>
+                                <option value="по жирности">по жирности</option>
+                            </select>
+                        </fieldset>
 
-                        <fieldset class="filterGroup">
+                        <fieldset class="filterGroup rangeItem">
                             <legend>Цена: 100 руб. – 500 руб.</legend>
-                            <div class="filterGroupContent disable">
-                                <div class="slider">
-                                    <span class="handle"></span>
-                                    <span class="handle"></span>
-                                    <div></div>
+                            <div class="filterGroupContent">
+                                <div class="price-controls">
+                                    <input type="text" name="min-price" value="100" hidden>
+                                    <input type="text" name="max-price" value="500" hidden>
+                                </div>
+                                <div class="range-controls">
+                                    <div class="scale">
+                                        <div class="bar"></div>
+                                    </div>
+                                    <div class="range-toggle range-toggle-min"></div>
+                                    <div class="range-toggle range-toggle-max"></div>
                                 </div>
                             </div>
                         </fieldset>
-                        &lt;!&ndash;также комментирую вариант с формой&ndash;&gt;
-                        &lt;!&ndash;<fieldset>
-                            <legend>Цена: 100 руб. – 500 руб.</legend>
-                            <input type="range" min="100" max="500" step="5" value="100">
-                        </fieldset>&ndash;&gt;
 
-                        <fieldset class="filterGroup">
+                        <fieldset class="filterGroup fatnessItem">
                             <legend>Жирность:</legend>
-                            <div class="filterGroupContent disable">
-                                <label class="radio"><input type="radio" name="fatness">0%</label>
-                                <label class="radio checked"><input type="radio" name="fatness" checked>до 10%</label>
-                                <label class="radio"><input type="radio" name="fatness">до 30%</label>
-                                <label class="radio"><input type="radio" name="fatness">выше 30%</label>
+                            <div class="filterGroupContent">
+                                <input class="none" id="per0" type="radio" name="fatness" hidden>
+                                <label class="radio" for="per0">
+                                    <span class="radioItem">
+                                        <span class="innerRadio"></span>
+                                    </span>0%
+                                </label>
+                                <input class="none" id="per10" type="radio" name="fatness" checked hidden>
+                                <label class="radio checked" for="per10">
+                                    <span class="radioItem">
+                                        <span class="innerRadio"></span>
+                                    </span>до 10%
+                                </label>
+                                <input class="none" id="per30" type="radio" name="fatness" hidden>
+                                <label class="radio" for="per30">
+                                    <span class="radioItem">
+                                        <span class="innerRadio"></span>
+                                    </span>до 30%
+                                </label>
+                                <input class="none" id="over30" type="radio" name="fatness" hidden>
+                                <label class="radio" for="over30">
+                                    <span class="radioItem">
+                                        <span class="innerRadio"></span>
+                                    </span>выше 30%
+                                </label>
                             </div>
                         </fieldset>
 
-                        <fieldset class="filterGroup">
+                        <fieldset class="filterGroup fillerItem">
                             <legend>Наполнители:</legend>
-                            <div class="filterGroupContent disable">
-                                <label class="checkbox checked"><input type="checkbox" name="filler" value="шоколадные" checked>шоколадные</label>
-                                <label class="checkbox checked"><input type="checkbox" name="filler" value="сахарные присыпки" checked>сахарные присыпки</label>
-                                <label class="checkbox"><input type="checkbox" name="filler" value="фрукты">фрукты</label>
-                                <label class="checkbox"><input type="checkbox" name="filler" value="сиропы">сиропы</label>
-                                <label class="checkbox"><input type="checkbox" name="filler" value="джемы">джемы</label>
+                            <div class="filterGroupContent">
+                                <input class="none" id="choco" type="checkbox" name="filler" value="шоколадные" checked hidden>
+                                <label  class="checkbox checked" for="choco">
+                                    <span class="checkboxItem">
+                                        <span class="innerCheckbox"></span>
+                                    </span>шоколадные
+                                </label>
+                                <input class="none" id="sugar" type="checkbox" name="filler" value="сахарные присыпки" checked hidden>
+                                <label  class="checkbox checked" for="sugar">
+                                    <span class="checkboxItem">
+                                        <span class="innerCheckbox"></span>
+                                    </span>сахарные присыпки
+                                </label>
+                                <input class="none" id="fruit" type="checkbox" name="filler" value="фрукты" hidden>
+                                <label  class="checkbox" for="fruit">
+                                    <span class="checkboxItem">
+                                        <span class="innerCheckbox"></span>
+                                    </span>фрукты
+                                </label>
+                                <input class="none" id="syrup" type="checkbox" name="filler" value="сиропы" hidden>
+                                <label  class="checkbox" for="syrup">
+                                    <span class="checkboxItem">
+                                        <span class="innerCheckbox"></span>
+                                    </span>сиропы
+                                </label>
+                                <input class="none" id="jams" type="checkbox" name="filler" value="джемы" hidden>
+                                <label  class="checkbox" for="jams">
+                                    <span class="checkboxItem">
+                                        <span class="innerCheckbox"></span>
+                                    </span>джемы
+                                </label>
                             </div>
                         </fieldset>
-                        <button class="btn btnDefault btnSmall btnBordered" type="submit"><a href="about:blank" target="_blank">Применить</a></button>/*добавил в кнопку ссылку, в задание нужно, чтобы форма вела на пустую страницу при отключенном скрипте*/
-                    </form>-->
+                        <button class="btn btnDefault btnSmall btnBordered" type="submit">Применить</button>
+                    </form>
                 </section>
                 <section class="productList catalogPage clearfix">
                     <article class="productItem catalogPage">
@@ -410,19 +435,19 @@
                     </article>
                     <nav>
                         <ul class="pagination">
-                            <li class="disabled">
-                                <span aria-hidden="true">&#12296;</span>
+                            <li class="paginItem">
+                                <span class="leftArrow disabled"></span>
                             </li>
-                            <li class="disabled">
+                            <li class="paginItem disabled">
                                 <span>1</span>
                             </li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li>
-                                <a href="#" aria-label="Следующая">
-                                    <span aria-hidden="true">&#12297;</span>
+                            <li class="paginItem"><a href="#">2</a></li>
+                            <li class="paginItem"><a href="#">3</a></li>
+                            <li class="paginItem"><a href="#">4</a></li>
+                            <li class="paginItem"><a href="#">5</a></li>
+                            <li class="paginItem">
+                                <a href="#">
+                                    <span class="rightArrow"></span>
                                 </a>
                             </li>
                         </ul>
