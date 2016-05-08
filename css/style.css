@@ -1827,7 +1827,7 @@ hr.bigHR {
 
 /*сортировка*/
 .sortItem {
-    width: 193px;
+    width: 201px;
 }
 
 .filterForm legend {
@@ -1855,6 +1855,10 @@ hr.bigHR {
     background-repeat: no-repeat;
 }
 
+.groupContentSort {
+    border: none;
+}
+
 .groupContentSort::-ms-expand {
     display: none;
 }
@@ -1877,6 +1881,7 @@ hr.bigHR {
 
 /*диапазон цен - лекционная реализация*/
 .rangeItem {
+    width: 236px;
     margin-left: -6px;
 }
 
@@ -1931,6 +1936,10 @@ hr.bigHR {
 }
 
 /*выбор жирности*/
+.fatnessItem {
+    width: 427px;
+}
+
 .fatnessItem .filterGroupContent {
     width: 414px;
     margin-left: -7px;
