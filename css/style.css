@@ -333,25 +333,19 @@ li.item:last-child {
     text-decoration: none;
 }
 
-.dropdownMenuItem a,
-.dropdownMenuLink.active {
-    font-weight: normal;
-}
 
-.dropdownMenuLink.active {
-    color: #ffffff;
-}
 
 .dropdownMenuItem:first-child {
-    width: 128px;
-    margin-left: 6px;
+    width: 143px;
     margin-top: 10px;
-    margin-bottom: 5px;
-    border-bottom: 1px solid #d1d0ce;
-    padding-bottom: 10px;
+    margin-left: 0;
+    margin-bottom: 4px;
+    padding-left: 6px;
 }
 
 .dropdownMenuItem:first-child a {
+    display: inline-block;
+    vertical-align: sub;
     margin-left: 14px;
     font-weight: bold;
 }
@@ -359,9 +353,17 @@ li.item:last-child {
 .dropdownMenuItem {
     display: block;
     width: 143px;
-    min-height: 28px;/*
-    margin-top: 0;*/
+    min-height: 28px;
     margin-bottom: 3px;
+}
+
+.dropdownMenuItem a,
+.dropdownMenuLink.active {
+    font-weight: normal;
+}
+
+.dropdownMenuLink.active{
+    color: #ffffff;
 }
 
 .dropdownMenuItem.current,
@@ -375,18 +377,18 @@ li.item:last-child {
     background-color: #fbded7;
 }
 
-.dropdownMenuItem:first-child:hover {
-    background-color: inherit;
-}
 
-.dropdownMenuItem:active {
+.dropdownMenuItem:active,
+.dropdownMenuItem:first-child:active {
     background-color: #f6b5a5;
     cursor: pointer;
 }
 
-.dropdownMenuItem:first-child:active {
-    background-color: inherit;
-    cursor: pointer;
+hr.smallHR {
+    width: 128px;
+    margin-left: 6px;
+    margin-top: -5px;
+    margin-bottom: 5px;
 }
 
 /*блок поиска и информационный блок*/
@@ -2108,4 +2110,12 @@ input[type="checkbox"]:disabled + .checkbox:hover span{
 
 .btnBordered:active {
     box-shadow: inset 0 1px 2px #696969;
+}
+
+/*блокировка форм при наведении*/
+.dropdownMenu:hover,
+.searchForm:hover,
+.userForm:hover,
+.basketForm:hover {
+    display: block;
 }
