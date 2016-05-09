@@ -19,7 +19,7 @@
 
                     <ul class="pageHeaderList">
                         <li class="item dropdown current">
-                            <a class="itemLink dropdownToggle" href="catalog.html">
+                            <a class="itemLink dropdownToggle" href="maincatalog.html">
                                 <span class="dropdownTitle">Каталог</span>
                             </a>
                             <ul class="dropdownMenu none">
@@ -28,7 +28,9 @@
                                         Новинки
                                     </a>
                                 </li>
-                                <hr class="smallHR">
+                                <li class="dropdownMenuItem hr">
+                                    <hr class="smallHR">
+                                </li>
                                 <li class="dropdownMenuItem current">
                                     <span class="dropdownMenuLink active">Сливочное</span>
                                 </li>
@@ -68,6 +70,7 @@
                     </a>
                     <form class="searchForm none" action="#" name="searchForm" method="post" enctype="multipart/form-data">
                         <input class="inputText" type="text" placeholder="Что ищём?">
+                        <span class="fakePlaceholder none">Что ищём?</span>
                     </form>
                 </div>
 
@@ -160,16 +163,16 @@
                         <fieldset class="filterGroup rangeItem">
                             <legend>Цена: 100 руб. – 500 руб.</legend>
                             <div class="filterGroupContent">
-                                <div class="price-controls">
-                                    <input type="text" name="min-price" value="100" hidden>
-                                    <input type="text" name="max-price" value="500" hidden>
+                                <div class="priceControls">
+                                    <input type="text" name="minPrice" value="100" hidden>
+                                    <input type="text" name="maxPrice" value="500" hidden>
                                 </div>
-                                <div class="range-controls">
+                                <div class="rangeControls">
                                     <div class="scale">
                                         <div class="bar"></div>
                                     </div>
-                                    <div class="range-toggle range-toggle-min"></div>
-                                    <div class="range-toggle range-toggle-max"></div>
+                                    <div class="rangeToggle rangeToggleMin"></div>
+                                    <div class="rangeToggle rangeToggleMax"></div>
                                 </div>
                             </div>
                         </fieldset>
@@ -500,5 +503,6 @@
             </div>
         </footer>
     </div>
+    <script src="js/main.js"></script>
 </body>
 </html>

@@ -20,7 +20,7 @@
 
                   <ul class="pageHeaderList">
                       <li class="item dropdown">
-                          <a class="itemLink dropdownToggle" href="catalog.html">
+                          <a class="itemLink dropdownToggle" href="maincatalog.html">
                               <span class="dropdownTitle">Каталог</span>
                           </a>
                           <ul class="dropdownMenu none">
@@ -29,7 +29,9 @@
                                       Новинки
                                   </a>
                               </li>
-                              <hr class="smallHR">
+                              <li class="dropdownMenuItem hr">
+                                  <hr class="smallHR">
+                              </li>
                               <li class="dropdownMenuItem">
                                   <a class="dropdownMenuLink" href="catalog.html">
                                       Сливочное
@@ -71,6 +73,7 @@
                   </a>
                   <form class="searchForm none" action="#" name="searchForm" method="post" enctype="multipart/form-data">
                       <input class="inputText" type="text" placeholder="Что ищём?">
+                      <span class="fakePlaceholder none">Что ищём?</span>
                   </form>
               </div>
 
@@ -165,13 +168,13 @@
               </section>
 
               <section class="productList clearfix"><!--раздел хитов выделил в отдельный блок-->
-                  <article class="productItem">
+                  <article class="productItem hitList">
                       <span class="productItemHitmark"></span><!--метку "Хит" предполагаю в спан фоном вставить-->
-                      <img class="productItemImg" src="img/orangeice.png" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой" width="267" height="267">
+                      <img class="productItemImg hitList" src="img/orangeice.png" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой" width="267" height="267">
                       <span class="productItemPrice">
-                          <span class="productPrice">310</span>
-                          <span class="productRubleIco"></span>
-                          <span class="productWeight">/кг</span>
+                          <span class="productPrice hitList">310</span>
+                          <span class="productRubleIco hitList"></span>
+                          <span class="productWeight hitList">/кг</span>
                       </span>
                       <h4 class="h4">
                           <a href="#">
@@ -181,11 +184,11 @@
                   </article>
                   <article class="productItem">
                       <span class="productItemHitmark"></span>
-                      <img class="productItemImg" src="img/coffeeice.png" alt="Сливочно-кофейное с кусочками шоколада" width="267" height="267">
+                      <img class="productItemImg hitList" src="img/coffeeice.png" alt="Сливочно-кофейное с кусочками шоколада" width="267" height="267">
                       <span class="productItemPrice">
-                          <span class="productPrice">380</span>
-                          <span class="productRubleIco"></span>
-                          <span class="productWeight">/кг</span>
+                          <span class="productPrice hitList">380</span>
+                          <span class="productRubleIco hitList"></span>
+                          <span class="productWeight hitList">/кг</span>
                       </span>
                       <h4 class="h4">
                           <a href="#">
@@ -195,11 +198,11 @@
                   </article>
                   <article class="productItem">
                       <span class="productItemHitmark"></span>
-                      <img class="productItemImg" src="img/strawberryice.png" alt="Сливочно-клубничное с присыпкой из белого шоколада" width="267" height="267">
+                      <img class="productItemImg hitList" src="img/strawberryice.png" alt="Сливочно-клубничное с присыпкой из белого шоколада" width="267" height="267">
                       <span class="productItemPrice">
-                          <span class="productPrice">355</span>
-                          <span class="productRubleIco"></span>
-                          <span class="productWeight">/кг</span>
+                          <span class="productPrice hitList">355</span>
+                          <span class="productRubleIco hitList"></span>
+                          <span class="productWeight hitList">/кг</span>
                       </span>
                       <h4 class="h4">
                           <a href="#">
@@ -209,11 +212,11 @@
                   </article>
                   <article class="productItem">
                       <span class="productItemHitmark"></span>
-                      <img class="productItemImg" src="img/bruleeice.png" alt="Сливочное крем-брюле с карамельной подливкой" width="267" height="267">
+                      <img class="productItemImg hitList" src="img/bruleeice.png" alt="Сливочное крем-брюле с карамельной подливкой" width="267" height="267">
                       <span class="productItemPrice">
-                          <span class="productPrice">415</span>
-                          <span class="productRubleIco"></span>
-                          <span class="productWeight">/кг</span>
+                          <span class="productPrice hitList">415</span>
+                          <span class="productRubleIco hitList"></span>
+                          <span class="productWeight hitList">/кг</span>
                       </span>
                       <h4 class="h4">
                           <a href="#">
@@ -334,17 +337,17 @@
           <form class="popupFeedbackForm" action="feedback.html" name="feedbackForm" method="post" enctype="multipart/form-data">
               <b>Мы обязательно вам ответим!</b>
               <a class="closeIco" href="index.html"></a>
+              <input class="inputText" id="nameInput" type="text" placeholder="Как вас зовут?">
               <span class="fakePlaceholder fakeName none">Как вас зовут?</span>
-              <input class="inputText" type="text" placeholder="Как вас зовут?">
+              <input class="inputText" id="emailInput" type="email" placeholder="Ваша почта для ответа?">
               <span class="fakePlaceholder fakeEmail none">Ваша почта для ответа?</span>
-              <input class="inputText" type="email" placeholder="Ваша почта для ответа?">
+              <textarea class="inputArea inputText" id="feedbackInput" name="feedback" cols="51" rows="7" placeholder="Напишите что-нибудь..."></textarea>
               <span class="fakePlaceholder fakeFeedBack none">Напишите что-нибудь...</span>
-              <textarea class="inputArea" name="feedback" id="feedbackText" cols="51" rows="7" placeholder="Напишите что-нибудь..."></textarea>
               <button type="submit" class="btn btnPrimary btnMedium">Отправить</button>
           </form>
       </div>
       <div class="backPopup none"></div><!--подложка попапа-->
   </div>
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
   </body>
 </html>

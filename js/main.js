@@ -1,50 +1,95 @@
-var link = document.querySelector(".mapBlock .btnPrimary"),
-    popup = document.querySelector(".popupForm"),
-    form = popup.querySelector('.popupFeedbackForm'),
-    close = popup.querySelector(".closeIco"),
-    email = popup.querySelector("[type='email']"),
-    name = popup.querySelector("[placeholder='Как вас зовут?']"),
-    backPopup = document.querySelector(".backPopup"),
-    storage = localStorage.getItem("name");
+window.addEventListener('load', load, false);
 
-link.addEventListener("click", function(event) {
-    event.preventDefault();
-    popup.classList.add("choice");
-    backPopup.classList.add("choice");
+function load() {
+    var link = document.querySelector(".mapBlock .btnPrimary"),
+        textInput = textInput = document.querySelectorAll('.inputText'),
+        len = textInput.length,
+        placeholder = '',
+        i = 0,
+        storage = localStorage.getItem("name");
 
-    if (storage) {
-        name.value = storage;
-        email.focus();
-    } else {
-        name.focus();
+    if (link) {
+        var popup = document.querySelector(".popupForm"),
+            form = document.querySelector('.popupFeedbackForm'),
+            close = form.querySelector(".closeIco"),
+            email = form.querySelector("#emailInput"),
+            name = form.querySelector("#nameInput"),
+            backPopup = document.querySelector(".backPopup");
+
+        link.addEventListener('click', openPopup);
+        close.addEventListener('click', closePopup);
+        form.addEventListener('submit', submitForm);
+        window.addEventListener('keydown', escapePopup);
     }
 
-});
 
-close.addEventListener("click", function(event) {
-    event.preventDefault();
-    popup.classList.remove("choice");
-    popup.classList.remove("popupError");
-    backPopup.classList.remove("choice");
-});
 
-form.addEventListener("submit", function(event) {
-    if (!name.value || !email.value) {
+    for (i = 0; i < len; i += 1) {
+        textInput[i].addEventListener('focus', checkFocus);
+        textInput[i].addEventListener('blur', setPlaceholder);
+    }
+
+    function openPopup(event) {
         event.preventDefault();
-        popup.classList.remove("popupError");
-        popup.offsetWidth = popup.offsetWidth;
-        popup.classList.add("popupError");
-    } else {
-        localStorage.setItem("name", name.value);
-    }
-});
+        popup.classList.remove("none");
+        backPopup.classList.remove("none");
 
-window.addEventListener("keydown", function(event) {
-    if (event.keyCode === 27) {
-        if (popup.classList.contains("choice")) {
-            popup.classList.remove("choice");
-            popup.classList.remove("popupError");
-            backPopup.classList.remove("choice");
+        if (storage) {
+            name.value = storage;
+            name.nextElementSibling.classList.remove('none');
+            email.focus();
+            email.nextElementSibling.classList.remove('none');
+        } else {
+            name.focus();
         }
     }
-});
+
+    function closePopup(event) {
+        event.preventDefault();
+        popup.classList.remove("choice");
+        popup.classList.remove("popupError");
+        backPopup.classList.remove("choice");
+        popup.classList.add("none");
+        backPopup.classList.add("none");
+    }
+
+    function submitForm(event) {
+        if (!name.value || !email.value) {
+            event.preventDefault();
+            popup.classList.remove("popupError");
+            popup.offsetWidth = popup.offsetWidth;
+            popup.classList.add("popupError");
+        } else {
+            localStorage.setItem("name", name.value);
+        }
+    }
+
+    function escapePopup(event) {
+        if (event.keyCode === 27) {
+            if (!(popup.classList.contains('none'))) {
+                popup.classList.remove("popupError");
+                popup.classList.add("none");
+                backPopup.classList.add("none");
+            }
+        }
+    }
+
+    function checkFocus(event) {
+        target = event.target;
+        placeholder = target.placeholder;
+        target.placeholder = '';
+        if (target.value === '') {
+            var fakePlaceHolder = target.nextElementSibling;
+            fakePlaceHolder.classList.remove('none');
+        }
+    }
+
+    function setPlaceholder(event) {
+        target = event.target;
+        target.placeholder = placeholder;
+        if (target.value === '') {
+            var fakePlaceHolder = target.nextElementSibling;
+            fakePlaceHolder.classList.add('none');
+        }
+    }
+}
