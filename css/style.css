@@ -29,8 +29,12 @@ button {
     outline: none;
 }
 
+html, body {
+    width: 100%;
+}
+
 body {
-    width: 1200px;
+    min-width: 1200px;
     margin: 0 auto;
     font-family: "Roboto", "Arial", sans-serif;
     font-size: 16px;
@@ -39,7 +43,6 @@ body {
     font-weight: 500;
 }
 
-/*стили фона всей страницы, которые будут меняться при смене слайда*/
 .none {
     display: none;
 }
@@ -49,6 +52,7 @@ body {
 }
 
 .popupForm.choice {
+    -webkit-animation: bounce 0.6s;
     animation: bounce 0.6s;
 }
 
@@ -93,11 +97,10 @@ h3,
 
 
 .container {
-    margin: 0 2.3%;
-}
-
-.container.backDefault {
-    background-color: #87a193;
+    width: 1200px;
+    margin: 0 auto;
+    padding-right: 28px;
+    padding-left: 28px;
 }
 
 /*кнопочки и общие элементы*/
@@ -156,7 +159,7 @@ h3,
 
 .inputText {
     width: 368px;
-    min-height: 44px;
+    height: 44px;
     float: left;
     margin-top: 36px;
     margin-left: 22px;
@@ -218,8 +221,8 @@ h3,
     color: #5b9ddf;
 }
 
-/*блок header и его содержимое*/
 
+/*блок header и его содержимое*/
 .pageHeader {
     position: relative;
     min-height: 120px;
@@ -264,6 +267,7 @@ h3,
 li.item:last-child {
     margin-left: 1px;
 }
+
 
 /*блок выпадающего меню*/
 .dropdown:hover,
@@ -344,8 +348,6 @@ li.item:last-child {
     text-decoration: none;
 }
 
-
-
 .dropdownMenuItem:first-child {
     width: 143px;
     margin-top: 10px;
@@ -387,12 +389,9 @@ li.item:last-child {
     background-color: #d07058;
 }
 
-
-
 .dropdownMenuItem:hover {
     background-color: #fbded7;
 }
-
 
 .dropdownMenuItem:active,
 .dropdownMenuItem:first-child:active {
@@ -410,6 +409,7 @@ hr.smallHR {
     margin-top: -5px;
     margin-bottom: 5px;
 }
+
 
 /*блок поиска и информационный блок*/
 .searchBlock {
@@ -467,6 +467,7 @@ hr.smallHR {
 .searchForm .inputText:focus {
     padding-left: 10px;
 }
+
 
 /*блок входа и корзины*/
 .user {
@@ -544,6 +545,7 @@ hr.smallHR {
     margin-right: 10px;
 }
 
+
 /*полная корзина*/
 .fullBasket:hover .basketForm {
     position: absolute;
@@ -591,6 +593,7 @@ hr.smallHR {
 .purchaseImg {
     margin-top: -2px;
     margin-left: 21px;
+    border-radius: 50%;
 }
 
 .purchaseTitle {
@@ -745,13 +748,15 @@ a.btnDefault:hover .icoEmptyBasket {
     text-decoration: none;
 }
 
+
 /*хлебные крошки*/
 .breadcrumbs {
-    position: absolute;
-    width: 350px;
+    display: block;
+    width: 335px;
     min-height: 18px;
-    bottom: 0;
-    left: 27px;
+    float: left;
+    margin-top: 35px;
+    margin-left: -153px;
 }
 
 .breadcrumbsMenuItem {
@@ -770,6 +775,7 @@ a.btnDefault:hover .icoEmptyBasket {
 .divider {
     margin-left: 4px;
 }
+
 
 /*слайдер*/
 .slider {
@@ -871,7 +877,8 @@ body > input[type="radio"] {
 }
 
 .siteWrapper {
-    min-width: 1080px;
+    width: 100%;
+    min-width: 1200px;
     background-repeat: no-repeat;
     background-position: top center;
     -webkit-transition: background-image 0.5s ease, background-color 0.5s ease;
@@ -911,6 +918,27 @@ body > input[type="radio"] {
 
 .slide {
     display: none;
+}
+
+.firstItem .h1 {
+    width: 675px;
+    height: 105px;
+    margin-left: 234px;
+    margin-top: 5px;
+}
+
+.secondItem .h1 {
+    width: 647px;
+    height: 120px;
+    margin-left: 249px;
+    margin-top: 5px;
+}
+
+.thirdItem .h1 {
+    width: 644px;
+    height: 120px;
+    margin-left: 248px;
+    margin-top: 5px;
 }
 
 .sliderControls {
@@ -1038,6 +1066,7 @@ body > input[type="radio"] {
     margin-left: 352px;
 }
 
+
 /*каталог товаров*/
 .productList {
     min-height: 365px;
@@ -1059,7 +1088,6 @@ footer a:hover,
 a.btnPrimary:hover {
     color: #ffffff;
 }
-
 
 article.productItem {
     position: relative;
@@ -1215,6 +1243,7 @@ p.thermIco::before {
     margin-left: -54px;
 }
 
+
 /*новостной блок*/
 .newsBlock {
     min-height: 220px;
@@ -1358,6 +1387,7 @@ p.adressGeneral {
     line-height: 1.222;
 }
 
+
 /*popup-форма фидбека*/
 .popupForm {
     position: fixed;
@@ -1398,7 +1428,7 @@ p.adressGeneral {
 
 .inputArea.inputText {
     width: 428px;
-    max-height: 155px;
+    height: 155px;
     margin-top: 21px;
     margin-left: 23px;
     border-radius: 5px;
@@ -1448,36 +1478,79 @@ p.adressGeneral {
     background: url('../img/spritesIco.png') no-repeat -10px -10px;
 }
 
-@keyframes bounce {
+@-webkit-keyframes bounce {
     0%   {
+        -webkit-transform: translateY(-2000px);
         transform: translateY(-2000px);
     }
     70%  {
+        -webkit-transform: translateY(30px);
         transform: translateY(30px);
     }
     90%  {
+        -webkit-transform: translateY(-10px);
         transform: translateY(-10px);
     }
     100% {
+        -webkit-transform: translateY(0);
         transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%   {
+        -webkit-transform: translateY(-2000px);
+        transform: translateY(-2000px);
+    }
+    70%  {
+        -webkit-transform: translateY(30px);
+        transform: translateY(30px);
+    }
+    90%  {
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@-webkit-keyframes shake {
+    0%, 100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        -webkit-transform: translateX(-10px);
+        transform: translateX(-10px);
+    }
+    20%, 40%, 60%, 80% {
+        -webkit-transform: translateX(10px);
+        transform: translateX(10px);
     }
 }
 
 @keyframes shake {
     0%, 100% {
+        -webkit-transform: translateX(0);
         transform: translateX(0);
     }
     10%, 30%, 50%, 70%, 90% {
+        -webkit-transform: translateX(-10px);
         transform: translateX(-10px);
     }
     20%, 40%, 60%, 80% {
+        -webkit-transform: translateX(10px);
         transform: translateX(10px);
     }
 }
 
 .popupError {
+    -webkit-animation: shake 0.6s;
     animation: shake 0.6s;
 }
+
 
 /*футер*/
 .pageFooter {
@@ -1613,6 +1686,7 @@ a.heartIco {
     font-weight: lighter;
     color: #ffffff;
 }
+
 
 /*контент каталога*/
 /*заголовок*/
@@ -1802,6 +1876,7 @@ hr.bigHR {
 
 .leftArrow {
     -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
     transform: rotate(180deg);
     opacity: 0.2;
 }
@@ -2044,6 +2119,7 @@ hr.bigHR {
     border-radius: 50%;
 }
 
+
 /*тройная вложенность из-за сложной формы*/
 input[type="radio"]:checked + .radio span {
     display: block;
@@ -2134,6 +2210,7 @@ input[type="checkbox"]:disabled + .checkbox:hover span{
     margin-left: 3px;
 }
 
+
 /*кнопка применить*/
 .btnBordered {
     width: 143px;
@@ -2169,5 +2246,3 @@ input[type="checkbox"]:disabled + .checkbox:hover span{
 .basketForm:hover {
     display: block;
 }
-
-/*комментарий*/
