@@ -35,7 +35,6 @@ html, body {
 
 body {
     min-width: 1200px;
-    margin: 0 auto;
     font-family: "Roboto", "Arial", sans-serif;
     font-size: 16px;
     line-height: 1.375;
@@ -254,7 +253,7 @@ h3,
 .pageHeaderMenu,
 .pageHeaderList {
     position: relative;
-    width: 375px;
+    width: 374px;
     min-height: 18px;
     float: left;
 }
@@ -265,7 +264,15 @@ h3,
 }
 
 li.item:last-child {
-    margin-left: 1px;
+    float: right;
+    margin-right: 26px;
+}
+
+.item .itemLink {
+    display: inline-block;
+    vertical-align: baseline;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 
@@ -482,6 +489,7 @@ hr.smallHR {
 .userBasket {
     display: inline;
     margin-top: 24px;
+    margin-left: 2px;
 }
 
 .userEnter {
@@ -505,7 +513,7 @@ hr.smallHR {
 
 .enterTitle {
     float: right;
-    margin-right: 16px;
+    margin-right: 17px;
     padding-top: 8px;
 }
 
@@ -514,7 +522,7 @@ hr.smallHR {
     width: 21px;
     height: 20px;
     float: left;
-    margin-left: 18px;
+    margin-left: 16px;
     margin-top: 6px;
     background: url(../img/spritesIco.png) no-repeat -88px -10px;
 }
@@ -1028,11 +1036,13 @@ body > input[type="radio"] {
 .bannerLeftBlock h2 {
     margin-top: 16px;
     margin-left: 18px;
+    margin-right: 18px;
 }
 
 .bannerRightBlock h2 {
     margin-top: 16px;
     margin-left: 20px;
+    margin-right: 20px;
 }
 
 .bannerLeftBlock p,
