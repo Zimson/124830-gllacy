@@ -122,6 +122,16 @@ h3,
     border-radius: 50%;
 }
 
+.searchBlock .btnDefault::after {
+    position: absolute;
+    display: block;
+    bottom: -10px;
+    left: 0;
+    content: '';
+    width: 30px;
+    height: 10px;
+}
+
 .btnPrimary {
     display: block;
     width:189px;
@@ -273,6 +283,16 @@ li.item:last-child {
     vertical-align: baseline;
     text-decoration: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.item.dropdown::after {
+    position: absolute;
+    display: block;
+    bottom: -10px;
+    left: 0;
+    content: '';
+    width: 70px;
+    height: 10px;
 }
 
 
@@ -560,6 +580,16 @@ hr.smallHR {
     display: block;
 }
 
+.fullBasket .btnDefault::after {
+    position: absolute;
+    bottom: 25px;
+    right: 0;
+    display: block;
+    content: '';
+    width: 115px;
+    height: 10px;
+}
+
 .basketForm {
     top: 60px;
     left: -318px;
@@ -710,6 +740,16 @@ hr {
     left: 19px;
     padding-bottom: 4px;
     width: 100px;
+}
+
+.enterLink::after {
+    position: absolute;
+    bottom: 25px;
+    left: 5px;
+    display: block;
+    content: '';
+    width: 90px;
+    height: 10px;
 }
 
 a.btnDefault:hover {
@@ -1722,7 +1762,8 @@ h1.catalogPage {
 
 .productItem.catalogPage {
     position: relative;
-    margin-bottom: 11px;
+    margin-bottom: -43px;
+    height: 405px;
 }
 
 .catalogPage .btnMedium {
@@ -1849,23 +1890,27 @@ hr.bigHR {
     font-size: 16px;
     line-height: 1.125;
     text-decoration: none;
-    padding-left: 7px;
+    padding-left: 8px;
     margin-top: 4px;
 }
 
-.disabled {
+.paginItem:first-child span {
+    padding-left: 7px;
+}
+
+.paginItem.active {
     background-color: #ffffff;
     margin-bottom: 2px;
-    margin-right: 6px;
+    margin-right: 5px;
     margin-left: -3px;
 }
 
-.disabled span,
-.disabled a {
+.paginItem.active span,
+.paginItem.active a {
     display: block;
     color: #323232;
     padding-left: 9px;
-    margin-top: 3px;
+    margin-top: 4px;
 }
 
 .paginItem:last-child {
@@ -1891,8 +1936,8 @@ hr.bigHR {
     opacity: 0.2;
 }
 
-.leftArrow.disabled,
-.rightArrow.disabled {
+.leftArrow.active,
+.rightArrow.active {
     background-color: inherit;
 }
 
@@ -1911,13 +1956,13 @@ hr.bigHR {
     background-color: rgba(255, 255, 255, 0);
 }
 
-.paginItem.disabled:hover {
+.paginItem.active:hover {
     background-color: #ffffff;
     cursor: default;
 }
 
-.paginItem.disabled:hover span,
-.paginItem.disabled:hover a {
+.paginItem.active:hover span,
+.paginItem.active:hover a {
     color: #323232;
 }
 
