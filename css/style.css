@@ -2268,7 +2268,6 @@ input[type="checkbox"]:disabled + .checkbox:hover span{
     margin-left: 3px;
 }
 
-
 /*кнопка применить*/
 .btnBordered {
     width: 143px;
@@ -2303,4 +2302,10 @@ input[type="checkbox"]:disabled + .checkbox:hover span{
 .userForm:hover,
 .basketForm:hover {
     display: block;
+}
+
+/*айфрейм карта*/
+.iMap {
+    position: absolute;
+    top: 0;
 }
