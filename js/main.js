@@ -22,8 +22,6 @@ function load() {
         window.addEventListener('keydown', escapePopup);
     }
 
-
-
     for (i = 0; i < len; i += 1) {
         textInput[i].addEventListener('focus', checkFocus);
         textInput[i].addEventListener('blur', setPlaceholder);
