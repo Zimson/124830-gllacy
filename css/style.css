@@ -1384,13 +1384,14 @@ p.thermIco::before {
     margin-top: 39px;
     background-size: cover;
     background-position: 50% 50%;
-    background-image: url('../img/map.png')
+    background-image: url('../img/map.jpg')
 }
 
 .adressBlock {
     position: absolute;
     top: 63px;
-    right: 380px;
+    right: 0;
+    margin-right: 27px;
     width: 302px;
     min-height: 305px;
     background-color: #ffffff;
@@ -2307,9 +2308,17 @@ input[type="checkbox"]:disabled + .checkbox:hover span{
 }
 
 /*айфрейм карта*/
+.mapBlockContainer {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+}
+
 .iMap {
     position: absolute;
     width: 100%;
     top: 0;
     z-index: 0;
 }
+
+
