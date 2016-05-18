@@ -2321,4 +2321,7 @@ input[type="checkbox"]:disabled + .checkbox:hover span{
     z-index: 0;
 }
 
+.iMap iframe {
+	min-width: 100%;
+}
 
